@@ -6,15 +6,69 @@
 			<?php echo $title_for_layout; ?>
 		</title>
 		<?php
+			echo $this->Html->css('main');
+			echo $this->Html->css('960-16-col-layout');
+			echo $this->Html->css('screen');
+			
+			echo $this->Html->script('jquery-1.8.2.min');
+			echo $this->Html->script('easySlider1.7');
+			echo $this->Html->script('jquery.autoellipsis-1.0.10.min');
+			
 			echo $this->fetch('meta');
 			echo $this->fetch('css');
 			echo $this->fetch('script');
 		?>
 	</head>
 	<body>
-		<?php 
-			echo $this->element('header');
-		?>
+		<div id="container" class="container_16">
+			<?php 
+				echo $this->element('header');
+				echo $this->element('navbar');
+			?>
+			<div id="wrap">
+				<!-- Left Container -->
+				<div id="left-container" class="grid_11">
+					<?php echo $this->element('slider'); ?>
+					<?php echo $this->element('news'); ?>
+				</div>
+				<!-- right Container -->
+				<div id="right-container" class="grid_5">
+					<?php echo $this->element('right-col'); ?>
+				</div>
+			
+			</div>
+			<?php echo $this->element('footer'); ?>
+		</div>
+		<script type="text/javascript">
+			// handle navbar submenus
+			$(function() {
+				$('.dropdown').mouseenter(function() {
+					$('.sublinks').stop(false, true).hide();
+					submenu = $(this).parent().next();
+					width = $(this).parent().width();
+					outerWidth = $(this).parent().outerWidth(true);
+					submenu.css({
+						width: width,
+						position: 'absolute',
+						top: ($(this).height() + 3) + 'px',
+						marginLeft: (outerWidth-width)/2,
+						marginRight: (outerWidth-width)/2,
+						zIndex: 1000
+					});
+					submenu.stop().slideDown(300);
+					submenu.mouseleave(function(){
+						$(this).slideUp(300);
+					});
+				});
+			});
+			// activate slideshow
+			$(document).ready(function () {
+				$("#slider").easySlider({
+					auto: true,
+					continuous: true
+				});
+				$(".title").ellipsis();
+			});
+		</script>
 	</body>
-
 </html>

@@ -24,3 +24,306 @@
 #7 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
 #8 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #9 {main}
+2012-11-27 19:03:30 Error: [MissingPluginException] Plugin DebugKit could not be found.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(364): CakePlugin::path('DebugKit')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(225): App::pluginPath('DebugKit')
+#2 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(542): App::path('Controller/Comp...', 'DebugKit')
+#3 [internal function]: App::load('ToolbarComponen...')
+#4 [internal function]: spl_autoload_call('ToolbarComponen...')
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Controller\ComponentCollection.php(99): class_exists('ToolbarComponen...')
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Controller\ComponentCollection.php(52): ComponentCollection->load('DebugKit.Toolba...', Array)
+#7 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(634): ComponentCollection->init(Object(PagesController))
+#8 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(182): Controller->constructClasses()
+#9 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#10 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-11-27 19:29:37 Error: Fatal Error (1): Call to undefined method View::css() in [D:\PWM\xampp\htdocs\techpreneurship\View\Layouts\base.ctp, line 9]
+2012-11-27 19:29:37 Error: [FatalErrorException] Call to undefined method View::css()
+#0 D:\PWM\xampp\htdocs\cake223\Cake\Error\ErrorHandler.php(161): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'D:\PWM\xampp\ht...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'D:\PWM\xampp\ht...', 9, Array)
+#2 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'D:\PWM\xampp\ht...', 9, Array)
+#3 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-27 19:46:45 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\header\pace-seal.png.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/header/pace...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/header/pace...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/header/pace...', NULL)
+#3 [internal function]: PagesController->display('img', 'header', 'pace-seal.png')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 19:46:45 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\header\pace-logo.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/header/pace...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/header/pace...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/header/pace...', NULL)
+#3 [internal function]: PagesController->display('img', 'header', 'pace-logo.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 19:46:45 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\header\nsf-logo.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/header/nsf-...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/header/nsf-...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/header/nsf-...', NULL)
+#3 [internal function]: PagesController->display('img', 'header', 'nsf-logo.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 19:46:50 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\header\pace-logo.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/header/pace...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/header/pace...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/header/pace...', NULL)
+#3 [internal function]: PagesController->display('img', 'header', 'pace-logo.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 19:47:00 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\header\pace-logo.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/header/pace...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/header/pace...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/header/pace...', NULL)
+#3 [internal function]: PagesController->display('img', 'header', 'pace-logo.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 19:47:02 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\header\pace-logo.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/header/pace...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/header/pace...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/header/pace...', NULL)
+#3 [internal function]: PagesController->display('img', 'header', 'pace-logo.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 20:02:58 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [D:\PWM\xampp\htdocs\techpreneurship\View\Elements\navbar.ctp, line 34]
+2012-11-27 20:02:58 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+#0 D:\PWM\xampp\htdocs\cake223\Cake\Error\ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 34, Array)
+#2 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 34, Array)
+#3 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-27 20:07:20 Error: Fatal Error (4): syntax error, unexpected ';' in [D:\PWM\xampp\htdocs\techpreneurship\View\Elements\navbar.ctp, line 38]
+2012-11-27 20:07:20 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 D:\PWM\xampp\htdocs\cake223\Cake\Error\ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 38, Array)
+#2 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 38, Array)
+#3 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-27 20:07:31 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [D:\PWM\xampp\htdocs\techpreneurship\View\Elements\navbar.ctp, line 56]
+2012-11-27 20:07:31 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 D:\PWM\xampp\htdocs\cake223\Cake\Error\ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 56, Array)
+#2 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 56, Array)
+#3 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-27 21:27:42 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\01.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/01.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/01.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/01.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '01.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:27:42 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\02.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/02.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/02.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/02.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '02.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:27:42 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\03.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/03.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/03.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/03.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '03.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:27:43 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\04.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/04.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/04.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/04.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '04.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:27:43 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\05.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/05.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/05.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/05.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '05.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:27:43 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\01.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/01.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/01.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/01.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '01.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:28:33 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\01.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/01.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/01.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/01.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '01.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:28:33 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\02.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/02.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/02.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/02.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '02.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:28:34 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\03.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/03.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/03.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/03.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '03.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:28:34 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\04.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/04.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/04.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/04.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '04.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:28:34 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\05.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/05.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/05.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/05.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '05.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:28:34 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\01.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/01.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/01.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/01.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '01.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:28:34 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\02.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/02.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/02.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/02.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '02.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:30:12 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\02.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/02.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/02.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/02.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '02.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:30:12 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\01.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/01.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/01.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/01.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '01.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:30:12 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\03.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/03.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/03.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/03.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '03.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:30:13 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\04.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/04.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/04.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/04.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '04.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:30:13 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\05.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/05.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/05.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/05.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '05.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:30:13 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\img\slider\02.jpg.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName('img/slider/02.j...')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('img/slider/02.j...', NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('img/slider/02.j...', NULL)
+#3 [internal function]: PagesController->display('img', 'slider', '02.jpg')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 21:56:20 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [D:\PWM\xampp\htdocs\techpreneurship\View\Elements\news.ctp, line 7]
+2012-11-27 21:56:20 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 D:\PWM\xampp\htdocs\cake223\Cake\Error\ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 7, Array)
+#2 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\PWM\xampp\ht...', 7, Array)
+#3 D:\PWM\xampp\htdocs\cake223\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

@@ -6,6 +6,16 @@ body {
 	font-family: Tahoma;
 	background-color: #AEDFED;
 	color: #D8D8D8;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+#container {
+	background-color: #ffffff;
+	margin-top: 5px;
+	padding-top: 5px;
+	border: 2px solid #b9ced3;
+	border-radius: 3px;
 }
 
 /* CSS For Dropdown Menu Start */
