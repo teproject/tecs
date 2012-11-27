@@ -1,0 +1,26 @@
+2012-11-27 18:01:24 Error: [MissingActionException] Action PagesController::display() could not be found.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#2 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-11-27 18:56:43 Error: [MissingViewException] View file "D:\PWM\xampp\htdocs\techpreneurship\View\Pages\display.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(473): View->_getViewFileName(NULL)
+#1 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render(NULL, NULL)
+#2 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render(NULL)
+#3 [internal function]: PagesController->display('home')
+#4 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-11-27 18:56:54 Error: [MissingLayoutException] Layout file "D:\PWM\xampp\htdocs\techpreneurship\View\Layouts\base.ctp.ctp" is missing.
+#0 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(514): View->_getLayoutFileName('base.ctp')
+#1 D:\PWM\xampp\htdocs\cake223\Cake\View\View.php(484): View->renderLayout('', 'base.ctp')
+#2 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(956): View->render('home', 'base.ctp')
+#3 D:\PWM\xampp\htdocs\techpreneurship\Controller\PagesController.php(75): Controller->render('home', 'base.ctp')
+#4 [internal function]: PagesController->display('home')
+#5 D:\PWM\xampp\htdocs\cake223\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#6 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#7 D:\PWM\xampp\htdocs\cake223\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#8 D:\PWM\xampp\htdocs\techpreneurship\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
