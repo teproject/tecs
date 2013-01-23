@@ -1,23 +1,22 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * News Model
- *
- */
+
 class News extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
 	public $displayField = 'title';
 
-/**
- * Validation rules
- *
- * @var array
- */
+	public $name = 'News';
+	
+	public $actsAs = array(
+		'UploadPack.Upload' => array(
+			'photo' => array(
+				'styles' => array(
+					'thumb' => '100x70'
+				)
+			)
+		)
+	);
+	
 	public $validate = array(
 		'title' => array(
 			'notempty' => array(
@@ -70,4 +69,13 @@ class News extends AppModel {
 			),
 		),
 	);
+	
+	public function beforeValidate(){
+		//parent::
+		//debug($this->data);
+		if(!empty($this->data['News']['published'])){
+			$this->data['News']['published'] = ($this->data['News']['published']==1) ? 'Yes' : 'No';
+		}
+		//debug($this->data);die;
+	}
 }

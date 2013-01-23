@@ -1,29 +1,29 @@
 <?php
 App::uses('AppController', 'Controller');
-/**
- * Users Controller
- *
- * @property User $User
- */
+
 class UsersController extends AppController {
 
-/**
- * index method
- *
- * @return void
- */
+	public function beforeFilter(){
+		parent::beforeFilter();
+	}
+	
+/*	public function isAuthorized($user){
+		if($this->action == 'sign_up'
+			|| $this->action == 'login'
+			|| $this->action == 'logout'){
+			return true;
+		} else if (loggedIn() && isAdmin()){
+			
+		}
+		
+		parent::isAuthorized($user);
+	}
+*/
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function view($id = null) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
@@ -32,11 +32,6 @@ class UsersController extends AppController {
 		$this->set('user', $this->User->read(null, $id));
 	}
 
-/**
- * add method
- *
- * @return void
- */
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->User->create();
@@ -49,13 +44,6 @@ class UsersController extends AppController {
 		}
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function edit($id = null) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
@@ -73,14 +61,6 @@ class UsersController extends AppController {
 		}
 	}
 
-/**
- * delete method
- *
- * @throws MethodNotAllowedException
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
@@ -96,4 +76,78 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('User was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	public function sign_up() {
+		$this->set('title_for_layout', 'Sign Up');
+		if ($this->request->is('post')) {				//if user has submitted sign up information:
+			$this->User->create();							//create a new record
+			if ($this->User->save($this->request->data)) {	//attempt to save new record; if successful:
+				$this->Session->setFlash(__(
+					'Thank you for your interest in our website. We will inform you via email once your account has been activated.'
+				));
+				$this->redirect($this->Auth->redirect());		//redirect
+			} else {										//otherwise:
+				$this->request->data['User']['password'] = '';	//clear password (to prevent the hash from being displayed back to the user)
+				$this->Session->setFlash(__('We were unnable to create your account. Please, try again.'));	//prompt user to try again
+			}
+		}
+	}
+	
+	public function login() {
+		$this->set('title_for_layout', 'Login');
+		
+		//do not allow users to log in repeatedly:
+		if ($this->Auth->user()){
+			$this->Session->setFlash(__('You have already logged in.'));
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+		}
+		//if user has not logged in yet, handle their POST authorization request:
+		else if($this->request->is('post')){
+			if($this->Auth->login()){
+				$this->Session->setFlash(__('You have logged in successfully!'));
+				return $this->redirect($this->Auth->redirect());
+			}
+			else{
+				$this->Session->setFlash(__('The email or password you entered is incorrect. Please try agian:'));
+			}
+		}
+	}
+	
+	public function logout() {
+		$this->redirect($this->Auth->logout());
+	}
+
+	public function activate($id = null) {
+		if($this->__loggedIn() && $this->__isAdmin()){
+			if($id){
+				$user = $this->User->read(null, $id);
+				if ($user){
+					$this->User->set(array('activated' => 'Yes'));
+					$this->User->save();
+					$this->Session->setFlash($user['User']['name'] . "'s account has been activated successfully. An email notification has been sent to ".$user['User']['email']);
+					$this->redirect(array('action' => 'index'));
+				}
+			} else {
+				$this->Session->setFlash(__('Please supply a valid user id.'));
+				$this->redirect(array('action' => 'index'));
+			}
+		} else {
+			$this->Session->setFlash(__('You are not authorized to activate user accounts.'));
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+		}
+	}
+	
+	private function __loggedIn(){
+		//returns true if the current user has logged in:
+		return $this->Auth->loggedIn();
+	}
+	
+	private function __isAdmin(){
+		//returns whether the currently logged in user is an administrator:
+		if($this->__loggedIn()){
+			return ($this->Auth->user('group') == 'Administrator');
+		}
+		return false;
+	}
+
 }

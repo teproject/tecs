@@ -1,29 +1,17 @@
 <?php
 App::uses('AppController', 'Controller');
-/**
- * News Controller
- *
- * @property News $News
- */
 class NewsController extends AppController {
 
-/**
- * index method
- *
- * @return void
- */
+	var $name = 'News';
+	var $uses = array('News');
+
+	var $helpers = array('Form', 'UploadPack.Upload');
+
 	public function index() {
 		$this->News->recursive = 0;
 		$this->set('news', $this->paginate());
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function view($id = null) {
 		$this->News->id = $id;
 		if (!$this->News->exists()) {
@@ -32,11 +20,6 @@ class NewsController extends AppController {
 		$this->set('news', $this->News->read(null, $id));
 	}
 
-/**
- * add method
- *
- * @return void
- */
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->News->create();
@@ -49,13 +32,6 @@ class NewsController extends AppController {
 		}
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function edit($id = null) {
 		$this->News->id = $id;
 		if (!$this->News->exists()) {
@@ -73,14 +49,6 @@ class NewsController extends AppController {
 		}
 	}
 
-/**
- * delete method
- *
- * @throws MethodNotAllowedException
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();

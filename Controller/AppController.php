@@ -31,8 +31,51 @@ App::uses('Controller', 'Controller');
  * @package       app.Controller
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller {
+class AppController extends Controller {	
 	public $components = array(
-		'DebugKit.Toolbar'
-	);
+		'DebugKit.Toolbar',
+		'Session',
+		'Auth' => array(
+			'loginAction' => array(
+				'controller' => 'Users',
+				'action' => 'login'
+			),
+			'authError' => 'You do not have permission to access this feature.',
+			'authenticate' => array(
+				'Form' => array(
+					'fields' => array(
+						'username' => 'email',
+						'password' => 'password'
+					)
+				)
+			),
+			'loginRedirect' => '/users'
+		)
+	);		
+	
+	// permits access if the authenticated user is an administrator:
+	public function isAuthorized($user) {
+		// Admin can access every action
+		if (isset($user['group']) && ($user['group'] == 'Administrator')) {
+			return true;
+		}
+		// Default deny
+		return false;
+	}
+	
+	public function beforeFilter(){
+		//determine user authentication and administrative status for all views:
+		$loggedIn = $this->Auth->loggedIn();
+		$isAdmin = false;
+		
+		if($loggedIn){
+			$isAdmin = ($this->Auth->user('group') == 'Administrator') ? true : false;
+		}
+		
+		$this->set('loggedIn', $this->Auth->loggedIn());
+		$this->set('isAdmin', $isAdmin);
+		
+		$this->Auth->allow('*');
+	}
+	
 }

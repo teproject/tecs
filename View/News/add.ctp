@@ -1,17 +1,28 @@
 <div class="news form">
-<?php echo $this->Form->create('News'); ?>
+<?php 
+	echo $this->Form->create('News', array(
+		'type' => 'file',
+		'class' => 'well'
+	)); 
+?>
 	<fieldset>
 		<legend><?php echo __('Add News'); ?></legend>
 	<?php
 		echo $this->Form->input('title');
-		echo $this->Form->input('photo_file_name');
+		echo $this->Form->file('photo');
 		echo $this->Form->input('content');
 		echo $this->Form->input('published');
-		echo $this->Form->input('created_by');
-		echo $this->Form->input('modified_by');
 	?>
+<?php 
+	echo $this->Form->button(__('Save'), array(
+		'class' => 'btn btn-primary'
+	));
+	echo $this->Form->button(__('Cancel'), array(
+		'class' => 'btn'
+	));?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php
+	echo $this->Form->end(); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

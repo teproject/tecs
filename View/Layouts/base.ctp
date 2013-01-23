@@ -8,7 +8,9 @@
 		<?php
 			echo $this->Html->css('main');
 			echo $this->Html->css('960-16-col-layout');
+			echo $this->Html->css('nav-bar');
 			echo $this->Html->css('screen');
+			echo $this->Html->css('bootstrap');
 			
 			echo $this->Html->script('jquery-1.8.2.min');
 			echo $this->Html->script('easySlider1.7');
@@ -28,10 +30,11 @@
 			<div id="wrap">
 				<!-- Left Container -->
 				<div id="left-container" class="grid_11">
+					<?php echo $this->Session->flash(); ?>
 					<?php echo $this->element('slider'); ?>
 					<?php echo $this->element('news'); ?>
 				</div>
-				<!-- right Container -->
+				<!-- Right Container -->
 				<div id="right-container" class="grid_5">
 					<?php echo $this->element('right-col'); ?>
 				</div>
