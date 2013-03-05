@@ -1,20 +1,21 @@
 <!-- Slider -->
 <div id="slider">
 	<ul>
-		<li>
-			<?php echo $this->Html->image('slider/01.jpg'); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->image('slider/02.jpg'); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->image('slider/03.jpg'); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->image('slider/04.jpg'); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->image('slider/05.jpg'); ?>
-		</li>
+		<?php 
+		foreach ($slides as $slide) {
+			echo '<li>';
+			echo $this->Html->link(
+				$this->upload->image(
+					$slide, 'Slide.photo', array(
+						'style' => 'slide')),
+				'http://'.$slide['Slide']['link'],
+				array(
+					'escape' => false,
+					'target' => '_blank',
+					'title' => $slide['Slide']['title']
+			));
+			echo '</li>';
+		}
+		?>
 	</ul>
 </div>

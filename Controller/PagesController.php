@@ -17,7 +17,7 @@ class PagesController extends AppController {
 */	
 	public function display() {
 		$path = func_get_args();
-
+		$layout = 'default';
 		$count = count($path);
 		if (!$count) {
 			$this->redirect('/');
@@ -33,9 +33,49 @@ class PagesController extends AppController {
 		if (!empty($path[$count - 1])) {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
-		if($page == 'home')
+		if($page == 'home'){
+			// load base layout:
 			$layout = 'base';
+			
+			// grab latest news:
+			$this->loadModel('News');
+			$this->set('news', $this->News->getLatest());
+			
+			// grab published slides:
+			$this->loadModel('Slide');
+			$this->set('slides', $this->Slide->getPublished());
+		}
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path), $layout);
+	}
+	
+	public function add() {
+		debug($this->request->data);die;
+		if ($this->request->is('post')) {
+			$this->Page->create();
+			if ($this->Page->save($this->request->data)) {
+				$this->Session->setFlash(__('The page has been saved.'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The page could not be saved. Please, try again.'));
+			}
+		}
+	}
+	
+	public function edit($id = null) {
+		$this->Pages->id = $id;
+		if (!$this->Page->exists()) {
+			throw new NotFoundException(__('Invalid page requested.'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Page->save($this->request->data)) {
+				$this->Session->setFlash(__('The page has been saved.'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The page could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->request->data = $this->News->read(null, $id);
+		}
 	}
 }

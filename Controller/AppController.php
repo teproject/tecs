@@ -52,6 +52,8 @@ class AppController extends Controller {
 			'loginRedirect' => '/users'
 		)
 	);		
+
+	var $helpers = array('Form', 'UploadPack.Upload');
 	
 	// permits access if the authenticated user is an administrator:
 	public function isAuthorized($user) {
@@ -71,7 +73,7 @@ class AppController extends Controller {
 		if($loggedIn){
 			$isAdmin = ($this->Auth->user('group') == 'Administrator') ? true : false;
 		}
-		
+		$isAdmin = true;
 		$this->set('loggedIn', $this->Auth->loggedIn());
 		$this->set('isAdmin', $isAdmin);
 		

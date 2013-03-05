@@ -1,45 +1,60 @@
 <div class="news index">
-	<h2><?php echo __('News'); ?></h2>
+	<ul id="news">
+		<?php echo $this->Html->link(
+				'<span id="add-action">New Article</span>', 
+				array('action' => 'add'), 
+				array('escape' => false, 'title' => 'Add a news article')); 
+		?>
+		<h2><?php echo __('News'); ?></h2>
 	<?php 
 		if (!empty($news)){
+			foreach ($news as $news) {
+				echo '<li class="news-item">';
+				echo $this->Html->link($this->upload->image($news, 'News.photo', array(
+								'style' => 'medium'
+							), array(
+								'class'=>'thumb',
+								'alt' => $news['News']['title']
+						)), array(
+						'action' => 'view',
+						$news['News']['id']
+					), array(
+						'escape' => false
+					)
+				);
+				echo '<span class="date">'.date('M. j, Y', strtotime($news['News']['created'])).'</span>';
+				if($isAdmin){
+					echo '<span class="actions">';
+					echo '&nbsp'.$this->Html->link(
+						$this->Html->image("icons/edit.png", array( 
+							'alt' => 'Edit', 
+							'title' => 'Edit '.$news['News']['title'],
+							'class' => 'edit-icon top')),									
+								array(
+									'controller' => 'news', 
+									'action' => 'edit', 
+									$news['News']['id']
+								), array('escape' => false));
+					//echo icon for deleting the news item
+					echo '&nbsp'.$this->Html->link(
+						$this->Html->image("icons/remove.png", array(
+							'alt' => 'Delete', 
+							'title' => 'Delete '.$news['News']['title'],
+							'class' => 'edit-icon')),
+								array('action' => 'delete', $news['News']['id']), array('escape'=>false),
+									"Are you sure you want to delete ".$news['News']['title']."?");
+					echo '</span>';
+				}
+				echo '<div class="title">'.$this->Html->link(
+					$news['News']['title'], array(
+						'action' => 'view',
+						$news['News']['id']
+					)).'</div>';
+				echo '<div class="content">'.$news['News']['content'].'</div>';
+				echo '</li>';
+			}
 	?>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('photo_file_name'); ?></th>
-			<th><?php echo $this->Paginator->sort('published'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php
-	foreach ($news as $news): ?>
-	<tr>
-		<td><?php echo h($news['News']['title']); ?>&nbsp;</td>
-		<td><?php echo h($news['News']['photo_file_name']); ?>&nbsp;</td>
-		<td><?php echo h($news['News']['published']); ?>&nbsp;</td>
-		<td><?php echo h($news['News']['created']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $news['News']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $news['News']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $news['News']['id']), null, __('Are you sure you want to delete # %s?', $news['News']['id'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
+	</ul>
 	<?php 
 		}
 		else {

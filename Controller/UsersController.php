@@ -136,7 +136,13 @@ class UsersController extends AppController {
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 		}
 	}
-	
+
+	public function dashboard(){ 
+		$this->set('title_for_layout', 'Admin Dashboard');
+		$current_user = $this->User->find('first', array(
+			'conditions' => array('id' => $this->Auth->user('id'))));
+		$this->set('user', $current_user);
+	}
 	private function __loggedIn(){
 		//returns true if the current user has logged in:
 		return $this->Auth->loggedIn();
@@ -149,5 +155,5 @@ class UsersController extends AppController {
 		}
 		return false;
 	}
-
+	
 }

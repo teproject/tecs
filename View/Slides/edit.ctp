@@ -1,25 +1,106 @@
 <div class="slides form">
-<?php echo $this->Form->create('Slide'); ?>
+<?php echo $this->Form->create('Slide', array(
+		'type' => 'file',
+		'class' => 'form-horizontal'
+	));  
+?>
 	<fieldset>
 		<legend><?php echo __('Edit Slide'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('title');
-		echo $this->Form->input('photo_file_name');
-		echo $this->Form->input('link');
-		echo $this->Form->input('order');
-		echo $this->Form->input('published');
-		echo $this->Form->input('created_by');
-		echo $this->Form->input('modified_by');
+
+		// display title input using twitter bootstrap syntax:
+		echo '<div class="control-group">';
+		echo $this->Form->label('title', 'Title', array(
+			'class' => 'control-label'
+		));
+		echo '<div class="controls">';
+		echo $this->Form->input('title', array(
+			'label' => '',
+			'class' => 'input-xlarge'
+		));
+		echo '</div></div>';
+
+
+		// do the same for photo:
+		echo '<div class="control-group">';
+		echo $this->Form->label('photo', 'Image', array(
+			'class' => 'control-label'
+		));
+		echo '<div class="controls">';
+		echo $this->Upload->image($this->request->data['News'], 'News.photo', array('style' => 'thumb'));
+		echo $this->Form->input('Slide.photo', array(
+			'type' => 'file', 
+			'accept' => 'image/*',
+			'label' => '',
+			'class' => 'input-xlarge'
+		));
+		echo '<p class="help-block">Images will be cropped to 650x240 px.</p>';
+		echo '</div></div>';
+		
+		
+		// link:
+		echo '<div class="control-group">';
+		echo $this->Form->label('link', 'URL', array(
+			'class' => 'control-label'
+		));
+		echo '<div class="controls">';
+		echo $this->Form->input('link', array(
+			'label' => '',
+			'class' => 'input-xlarge'
+		));
+		echo '</div></div>';
+		
+		// published:
+		echo '<div class="control-group">';
+		echo $this->Form->label('published', 'Publish?', array(
+			'class' => 'control-label'
+		));
+		echo '<div class="controls">';		
+		echo $this->Form->input('published', array(
+			'type' => 'select',
+			'options' => array(
+				'No' => 'No',
+				'Yes' => 'Yes'
+			),
+			'default' => 'No',
+			'label' => '',
+			'class' => 'input-medium'
+		));
+		echo '</div></div>';
+		
+		// Form Actions:
+		echo '<div class="form-actions">';
+		// Save/Cancel buttons:
+		echo '<span id="primary-actions">';
+		echo $this->Form->button(__('Save'), array(
+			'class' => 'btn btn-primary',
+			'name' => 'action',
+			'value' => 'save'
+		));
+		echo $this->Form->button(__('Cancel'), array(
+			'class' => 'btn',
+			'name' => 'action',
+			'onclick' => "return confirm('Are you sure you want to cancel?');",
+			'value' => 'cancel'
+		));
+		echo '</span>';
+		//Index/Delete buttons:
+		echo '<span id="secondary-actions">';
+		echo $this->Form->button(__('Delete'), array(
+			'class' => 'btn red',
+			'name' => 'action',
+			'onclick' => "return confirm('Are you sure you want to delete this article?');",
+			'value' => 'delete'
+		));
+		echo $this->Form->button(__('List Slides'), array(
+			'class' => 'btn green',
+			'name' => 'action',
+			'value' => 'index'
+		));
+		echo '</span>';
+		echo '</div>';
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Slide.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Slide.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Slides'), array('action' => 'index')); ?></li>
-	</ul>
+<?php echo $this->Form->end(); ?>
 </div>

@@ -11,7 +11,8 @@ class News extends AppModel {
 		'UploadPack.Upload' => array(
 			'photo' => array(
 				'styles' => array(
-					'thumb' => '100x70'
+					'thumb' => '100x70',
+					'medium' => '170x120'
 				)
 			)
 		)
@@ -21,8 +22,8 @@ class News extends AppModel {
 		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'message' => 'Please type a title for this news item.',
+				'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -31,21 +32,32 @@ class News extends AppModel {
 		'content' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'message' => 'Please enter the content for this news item.',
+				'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'photo' => array(
+			'attachmentPresence' => array(
+				'rule' => array('attachmentPresence'),
+				'message' => 'Please choose an image for this news item.'
+			),
+			'fileType' => array(
+				'rule' => array('attachmentContentType', array(
+					'image/jpeg', 
+					'image/gif',
+					'image/png')),
+				'message' => 'Please choose an image of type JPEG, GIF, or PNG.'
+			)
+		),
 		'published' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'inList' => array(
+				'rule' => array('inList', array('Yes', 'No')),
+				'message' => 'Please choose whether to publish this article.',
+				'allowEmpty' => false,
+				'required' => true
 			),
 		),
 		'created_by' => array(
@@ -71,11 +83,13 @@ class News extends AppModel {
 	);
 	
 	public function beforeValidate(){
-		//parent::
-		//debug($this->data);
-		if(!empty($this->data['News']['published'])){
-			$this->data['News']['published'] = ($this->data['News']['published']==1) ? 'Yes' : 'No';
-		}
-		//debug($this->data);die;
+	
+	}
+	
+	public function getLatest(){
+		return $this->find('all', array(
+			'oder' => array('News.id ASC'),
+			'limit' => 6
+		));
 	}
 }

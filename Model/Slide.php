@@ -1,57 +1,49 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * Slide Model
- *
- */
 class Slide extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
 	public $displayField = 'title';
 
-/**
- * Validation rules
- *
- * @var array
- */
+	public $actsAs = array(
+		'UploadPack.Upload' => array(
+			'photo' => array(
+				'styles' => array(
+					'thumb' => '310x115',
+					'slide' => '650x240'
+				)
+			)
+		)
+	);
+	
 	public $validate = array(
 		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please choose a title for this slide.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'photo_file_name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+		'photo' => array(
+			'attachmentPresence' => array(
+				'rule' => array('attachmentPresence'),
+				'message' => 'Please choose an image for this slide.'
 			),
+			'fileType' => array(
+				'rule' => array('attachmentContentType', array(
+					'image/jpeg', 
+					'image/gif',
+					'image/png')),
+				'message' => 'Please choose an image of type JPEG, GIF, or PNG.'
+			)
 		),
 		'link' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'url' => array(
 				'rule' => array('url'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'message' => 'Please enter a valid URL address.',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -70,7 +62,7 @@ class Slide extends AppModel {
 		'published' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Would you like to publsih this slide?',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -98,4 +90,13 @@ class Slide extends AppModel {
 			),
 		),
 	);
+	
+	public function getPublished(){
+		return $this->find('all', array(
+			'oder' => array('Slide.created DESC'),
+			'conditions' => array(
+				'Slide.published' => 'Yes'
+			)				
+		));
+	}
 }

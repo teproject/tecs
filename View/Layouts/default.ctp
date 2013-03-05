@@ -64,14 +64,6 @@
 					});
 				});
 			});
-			// activate slideshow
-			$(document).ready(function () {
-				$("#slider").easySlider({
-					auto: true,
-					continuous: true
-				});
-				$(".title").ellipsis();
-			});
 		</script>
 	</body>
 </html>
