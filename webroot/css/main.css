@@ -294,7 +294,7 @@ body {
 #add-action {
 	position: absolute;
 	right: 12px;
-	top: 26px;
+	top: 14px;
 	background-image: url(../img/icons/add.png);
 	background-position: left center;
 	background-repeat: no-repeat;
@@ -304,7 +304,12 @@ body {
 	padding-top: 2px;
 	vertical-align: center;
 }
-
+span.actions {
+	margin-left: 6px;
+}
+span.actions a  {
+	margin: 0 6px;
+}
 #slide-list{
 	list-style: none;
 	margin: 0px;

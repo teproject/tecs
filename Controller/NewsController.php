@@ -5,6 +5,28 @@ class NewsController extends AppController {
 	var $name = 'News';
 	var $uses = array('News');
 
+	public function beforeFilter(){
+		parent::beforeFilter();
+		if($this->isAuthorized($this->Auth->user())) $this->Auth->allow($this->action);
+		else $this->Auth->deny($this->action);
+	}
+	
+	public function isAuthorized($user = null){
+		$isAuthorized = false; 
+		if($this->action == 'index') {
+			$isAuthorized = true;
+		} else if (parent::loggedIn() && parent::isAdmin()){ 
+			if($this->action == 'view' 
+				|| $this->action == 'add' 
+				|| $this->action == 'delete' 
+				|| $this->action == 'edit')
+					$isAuthorized = true;
+		} else {
+			$isAuthorized = parent::isAuthorized($user);
+		}
+		return $isAuthorized;
+	}
+	
 	public function index() {
 		$this->News->recursive = 0;
 		$this->set('news', $this->paginate());

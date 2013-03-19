@@ -49,6 +49,7 @@ class AppController extends Controller {
 					)
 				)
 			),
+			'authorize' => 'Controller',	// handle authorization through the controller's isAuthorized() function
 			'loginRedirect' => '/users'
 		)
 	);		
@@ -57,27 +58,34 @@ class AppController extends Controller {
 	
 	// permits access if the authenticated user is an administrator:
 	public function isAuthorized($user) {
+		$isAuthorized = false;
 		// Admin can access every action
-		if (isset($user['group']) && ($user['group'] == 'Administrator')) {
-			return true;
+		if ($this->isAdmin()) {
+			$isAuthorized = true;
+		} else {	// deny non-admins by default:
+			$isAuthorized = false;
 		}
-		// Default deny
-		return false;
+		return $isAuthorized;
 	}
 	
 	public function beforeFilter(){
 		//determine user authentication and administrative status for all views:
-		$loggedIn = $this->Auth->loggedIn();
-		$isAdmin = false;
-		
-		if($loggedIn){
-			$isAdmin = ($this->Auth->user('group') == 'Administrator') ? true : false;
-		}
-		$isAdmin = true;
-		$this->set('loggedIn', $this->Auth->loggedIn());
-		$this->set('isAdmin', $isAdmin);
-		
-		$this->Auth->allow('*');
+		$loggedIn = $this->loggedIn();
+		$isAdmin = $this->isAdmin();
+		$this->set('loggedIn', $this->loggedIn());
+		$this->set('isAdmin', $isAdmin);	
 	}
 	
+	// returns 'true' when the current user has authenticated, and 'false' otherwise:
+	protected function loggedIn() {
+		return $this->Auth->loggedIn();
+	}
+	
+	// returns 'true' when the currently authenticated user is an administrator, and 'false' otherwise:
+	protected function isAdmin() {
+		if($this->loggedIn()){
+			return (bool)($this->Auth->user('group') == 'Administrator');
+		}
+		return false;
+	}
 }

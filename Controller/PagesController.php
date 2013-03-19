@@ -63,7 +63,10 @@ class PagesController extends AppController {
 	}
 	
 	public function edit($id = null) {
-		$this->Pages->id = $id;
+		if($id == null) 
+			$this->redirect(array('action' => 'display', 'home'));
+		
+		$this->Page->id = $id;
 		if (!$this->Page->exists()) {
 			throw new NotFoundException(__('Invalid page requested.'));
 		}

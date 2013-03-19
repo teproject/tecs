@@ -1,11 +1,11 @@
 <div class="news index">
-	<ul id="news">
+		<h2><?php echo __('News'); ?></h2>
 		<?php echo $this->Html->link(
 				'<span id="add-action">New Article</span>', 
 				array('action' => 'add'), 
 				array('escape' => false, 'title' => 'Add a news article')); 
 		?>
-		<h2><?php echo __('News'); ?></h2>
+	<ul id="news">
 	<?php 
 		if (!empty($news)){
 			foreach ($news as $news) {

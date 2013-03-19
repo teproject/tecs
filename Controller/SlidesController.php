@@ -7,6 +7,10 @@ class SlidesController extends AppController {
 		$this->Slide->recursive = 0;
 		$this->set('slides', $this->paginate());
 	}
+	
+	public function isAuthorized($user = null){
+		return parent::isAuthorized($user);
+	}
 
 	public function view($id = null) {
 		$this->Slide->id = $id;

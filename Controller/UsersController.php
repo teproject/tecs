@@ -2,23 +2,32 @@
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
-
+	
 	public function beforeFilter(){
 		parent::beforeFilter();
 	}
 	
-/*	public function isAuthorized($user){
-		if($this->action == 'sign_up'
-			|| $this->action == 'login'
-			|| $this->action == 'logout'){
-			return true;
-		} else if (loggedIn() && isAdmin()){
-			
-		}
+	public function isAuthorized($user = null){
+		$isAuthorized = false;
 		
-		parent::isAuthorized($user);
+		if($this->action == 'login'
+			|| $this->action == 'logout'){
+				$isAuthorized = true;
+		} else if (parent::loggedIn() && parent::isAdmin()){
+			if ($this->action == 'view' 
+				|| $this->action == 'add'
+				|| $this->action == 'edit'
+				|| $this->action == 'delete'
+				|| $this->action == 'activate'
+				|| $this->action == 'index'){
+					$isAuthorized = true;
+			}
+		} else {
+			$isAuthorized = parent::isAuthorized($user);
+		}
+		return $isAuthorized;
 	}
-*/
+	
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
@@ -118,7 +127,7 @@ class UsersController extends AppController {
 	}
 
 	public function activate($id = null) {
-		if($this->__loggedIn() && $this->__isAdmin()){
+		if($this->loggedIn() && $this->isAdmin()){
 			if($id){
 				$user = $this->User->read(null, $id);
 				if ($user){
@@ -142,18 +151,6 @@ class UsersController extends AppController {
 		$current_user = $this->User->find('first', array(
 			'conditions' => array('id' => $this->Auth->user('id'))));
 		$this->set('user', $current_user);
-	}
-	private function __loggedIn(){
-		//returns true if the current user has logged in:
-		return $this->Auth->loggedIn();
-	}
-	
-	private function __isAdmin(){
-		//returns whether the currently logged in user is an administrator:
-		if($this->__loggedIn()){
-			return ($this->Auth->user('group') == 'Administrator');
-		}
-		return false;
 	}
 	
 }

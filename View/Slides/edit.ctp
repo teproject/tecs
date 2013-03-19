@@ -28,7 +28,7 @@
 			'class' => 'control-label'
 		));
 		echo '<div class="controls">';
-		echo $this->Upload->image($this->request->data['News'], 'News.photo', array('style' => 'thumb'));
+		echo $this->Upload->image($this->request->data['Slide'], 'Slide.photo', array('style' => 'thumb'));
 		echo $this->Form->input('Slide.photo', array(
 			'type' => 'file', 
 			'accept' => 'image/*',

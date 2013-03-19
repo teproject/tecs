@@ -1,11 +1,11 @@
 <div class="slides index">
+	<h2><?php echo __('Slides'); ?></h2>
 	<?php 
 		echo $this->Html->link(
 			'<span id="add-action">New Slide</span>', 
 			array('action' => 'add'), 
 			array('escape' => false, 'title' => 'Add a news article')); 
 	?>
-	<h2><?php echo __('Slides'); ?></h2>
 	<?php
 	$slideCnt = 0;
 	echo '<ul id="slide-list">';
