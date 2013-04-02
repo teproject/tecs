@@ -32,7 +32,7 @@
 			'accept' => 'image/*',
 			'label' => '',
 			'class' => 'input-xlarge'));
-		echo '<p class="help-block">Images will be cropped to 650x240 px.</p>';
+		echo '<p class="help-block">Images must be smaller than 1 MB and will be cropped to 650x240 px.</p>';
 		echo '</div></div>';
 		
 		// link:

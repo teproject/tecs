@@ -28,14 +28,14 @@
 			'class' => 'control-label'
 		));
 		echo '<div class="controls">';
-		echo $this->Upload->image($this->request->data['Slide'], 'Slide.photo', array('style' => 'thumb'));
+		// must use Form->input() (not file()), so validation errors can be displayed:
 		echo $this->Form->input('Slide.photo', array(
 			'type' => 'file', 
 			'accept' => 'image/*',
 			'label' => '',
 			'class' => 'input-xlarge'
 		));
-		echo '<p class="help-block">Images will be cropped to 650x240 px.</p>';
+		echo '<p class="help-block">Images must be smaller than 1 MB and will be cropped to 650x240 px.</p>';
 		echo '</div></div>';
 		
 		

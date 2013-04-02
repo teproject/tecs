@@ -11,7 +11,6 @@ class News extends AppModel {
 		'UploadPack.Upload' => array(
 			'photo' => array(
 				'styles' => array(
-					'thumb' => '100x70',
 					'medium' => '170x120'
 				)
 			)
@@ -50,6 +49,10 @@ class News extends AppModel {
 					'image/gif',
 					'image/png')),
 				'message' => 'Please choose an image of type JPEG, GIF, or PNG.'
+			),
+			'maxSize' => array(
+				'rule' => array('attachmentMaxSize', 409600),
+				'message' => 'Please choose an image smaller than 400 KB.'
 			)
 		),
 		'published' => array(

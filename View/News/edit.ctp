@@ -22,13 +22,12 @@
 		echo $this->Form->label('photo', 'Image', array('class' => 'control-label'));
 		echo '<div class="controls">';
 		// must use Form->input() (not file()), so validation errors can be displayed:
-		echo $this->Upload->image($this->request->data['News'], 'News.photo', array('style' => 'thumb'));
 		echo $this->Form->input('News.photo', array(
 			'type' => 'file', 
 			'accept' => 'image/*',
 			'label' => '',
 			'class' => 'input-xlarge'));
-		echo '<p class="help-block">Images will be resized to 170x120 px.</p>';
+		echo '<p class="help-block">Images must be smaller than 400 KB will be resized to 170x120 px.</p>';
 		echo '</div></div>';
 	?>
 	<!-- wysihtml5 toolbar start -->

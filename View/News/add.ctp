@@ -27,7 +27,7 @@
 			'accept' => 'image/*',
 			'label' => '',
 			'class' => 'input-xlarge'));
-		echo '<p class="help-block">Images will be resized to 170x120 px.</p>';
+		echo '<p class="help-block">Images must be smaller than 400 KB and will be resized to 170x120 px.</p>';
 		echo '</div></div>';
 	?>
 

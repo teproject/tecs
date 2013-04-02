@@ -37,7 +37,11 @@ class Slide extends AppModel {
 					'image/gif',
 					'image/png')),
 				'message' => 'Please choose an image of type JPEG, GIF, or PNG.'
-			)
+			),
+			'maxSize' => array(
+				'rule' => array('attachmentMaxSize', 1048576),
+				'message' => 'Please choose an image smaller than 1 MB.'
+			),
 		),
 		'link' => array(
 			'url' => array(
