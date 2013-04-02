@@ -229,7 +229,7 @@ body {
 	margin-top: 5px;
 	width: 268px;
 	max-width: 268px;
-	min-height: 550px;
+	min-height: 350px;
 	background: #eef6f8; /* Old browsers */
 	background: -moz-linear-gradient(left, #eef6f8 0%, #e9f4f8 50%, #e9f4f6 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eef6f8), color-stop(50%,#e9f4f8), color-stop(100%,#e9f4f6)); /* Chrome,Safari4+ */
@@ -527,4 +527,48 @@ div#dashboard ul {
 }
 div#dashboard ul li{
 	font-size: 1.5em;
+}
+
+/* View Pages */
+div.view h2#title {
+	font-size: 2em;
+	line-height: 1.2em;
+	margin: 10px 0 12px 6px;
+}
+div.view img.edit-icon {
+	margin-right: 6px;
+}
+div.view span.actions {
+	margin: 0 0 12px 0;
+	font-size: 1.1em;
+}
+div.view span.actions a {
+	margin: 0 12px 0 0;
+	display: inline-block;
+}
+div.view img#news-image {
+	float: left;
+	margin: 0 12px 4px 6px;
+}
+div.view div#news-content {
+	font-size: 1.32em;
+	line-height: 1.4em;
+	text-align: justify;
+	margin-left: 6px;
+}
+div.view span.date {
+	display: inline-block;
+	font-size: 10.5pt;
+	background-color: #7BBADB;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	padding: 1px 5px;
+	font-size: 1.2em;
+	line-height: 1.3em;
+	min-width: 100px;
+	text-align: center;
+	color: #ffffff;
+	margin-right: 12px;
+	margin-bottom: 6px;
 }

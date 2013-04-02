@@ -11,7 +11,7 @@ class News extends AppModel {
 		'UploadPack.Upload' => array(
 			'photo' => array(
 				'styles' => array(
-					'medium' => '170x120'
+					'medium' => '170x125'
 				)
 			)
 		)
