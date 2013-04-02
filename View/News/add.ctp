@@ -27,7 +27,7 @@
 			'accept' => 'image/*',
 			'label' => '',
 			'class' => 'input-xlarge'));
-		echo '<p class="help-block">Images must be smaller than 400 KB and will be resized to 170x120 px.</p>';
+		echo '<p class="help-block">Images must be smaller than 400 KB and will be resized to 170x125 px.</p>';
 		echo '</div></div>';
 	?>
 
@@ -140,7 +140,7 @@
 <script>
 	var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
 		toolbar:      "wysihtml5-toolbar", // id of toolbar element
-		stylesheets:  ["../css/wysihtml5/toolbar.css", "../css/wysihtml5/editor.css"],	// stylesheet
+		stylesheets:  ["../../webroot/css/wysihtml5/toolbar.css", "../../webroot/css/wysihtml5/editor.css"],	// stylesheet
 		parserRules:  wysihtml5ParserRules // defined in parser rules set 
 		});
 </script>
