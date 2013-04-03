@@ -91,7 +91,7 @@ class News extends AppModel {
 	
 	public function getLatest(){
 		return $this->find('all', array(
-			'oder' => array('News.id ASC'),
+			'order' => array('News.created DESC'),
 			'limit' => 6
 		));
 	}
