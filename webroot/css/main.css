@@ -513,8 +513,12 @@ div#contact table h3{
 }
 
 /* Courses */
+div#courses h3{
+	font-size: 17.5px;
+}
 div#courses p {
 	text-align: justify;
+	width: 606px;
 }
 div#courses,
 div#projects {
