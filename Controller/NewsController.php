@@ -7,17 +7,17 @@ class NewsController extends AppController {
 
 	public function beforeFilter(){
 		parent::beforeFilter();
-		if($this->isAuthorized($this->Auth->user())) $this->Auth->allow($this->action);
+		if($this->isAuthorized($this->Auth->user()))
+			$this->Auth->allow($this->action);
 		else $this->Auth->deny($this->action);
 	}
 	
 	public function isAuthorized($user = null){
 		$isAuthorized = false; 
-		if($this->action == 'index') {
+		if($this->action == 'index' || $this->action == 'view') {
 			$isAuthorized = true;
 		} else if (parent::loggedIn() && parent::isAdmin()){ 
-			if($this->action == 'view' 
-				|| $this->action == 'add' 
+			if($this->action == 'add' 
 				|| $this->action == 'delete' 
 				|| $this->action == 'edit')
 					$isAuthorized = true;

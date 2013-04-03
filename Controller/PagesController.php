@@ -5,16 +5,22 @@ App::uses('AppController', 'Controller');
 class PagesController extends AppController {
 
 	public $name = 'Pages';
-
 	public $uses = array();
 	
-/*	public function isAuthorized($user){
+	public function beforeFilter(){
+		parent::beforeFilter();
+		if($this->isAuthorized($this->Auth->user())) 
+			$this->Auth->allow($this->action);
+		else $this->Auth->deny($this->action);
+	}
+	
+	public function isAuthorized($user){
 		if($this->action == 'display'){
 			return true;
 		}
-		return false;
+		return parent::isAuthorized($user);
 	}
-*/	
+	
 	public function display() {
 		$path = func_get_args();
 		$layout = 'default';

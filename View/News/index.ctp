@@ -1,9 +1,12 @@
 <div class="news index">
 		<h2><?php echo __('News'); ?></h2>
-		<?php echo $this->Html->link(
-				'<span id="add-action">New Article</span>', 
-				array('action' => 'add'), 
-				array('escape' => false, 'title' => 'Add a news article')); 
+		<?php
+			if($isAdmin){
+				echo $this->Html->link(
+					'<span id="add-action">New Article</span>', 
+					array('action' => 'add'), 
+					array('escape' => false, 'title' => 'Add a news article')); 
+			}
 		?>
 	<ul id="news">
 	<?php 

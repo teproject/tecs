@@ -218,7 +218,7 @@ body {
 }
 
 #left-container {
-	margin-top: 5px;
+	margin-top: 12px;
 	overflow: hidden;
 	float: left;
 }
@@ -226,7 +226,8 @@ body {
 #right-container {
 	float: left;
 	padding: 0 10px;
-	margin-top: 5px;
+	margin-top: 12px;
+	margin-bottom: 12px;
 	width: 268px;
 	max-width: 268px;
 	min-height: 350px;
@@ -533,7 +534,7 @@ div#dashboard ul li{
 div.view h2#title {
 	font-size: 2em;
 	line-height: 1.2em;
-	margin: 10px 0 12px 6px;
+	margin: 0 0 12px 6px;
 }
 div.view img.edit-icon {
 	margin-right: 6px;
