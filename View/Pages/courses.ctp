@@ -1,5 +1,5 @@
 <div id="courses">
-	<h2> Courses </h2>
+	<h2 id="page-title"> Courses </h2>
 	<h4>Data Mining:</h4>
 	<p>This course will provide an overview of topics such as introduction to data mining and knowledge history; data mining with structured and unstructured data; foundations of pattern clustering; clustering paradigms; clustering for data mining; data mining using neural networks and genetic algorithms; fast discovery of association rules; applications of data mining to pattern classification; and feature selection. The goal of this course is to introduce students to current machine learning and related data mining methods. It is intended to provide enough background to allow students to apply machine learning and data mining techniques to learning problems in a variety of application areas.</p>
 

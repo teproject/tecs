@@ -17,6 +17,9 @@ body {
 	border: 2px solid #b9ced3;
 	border-radius: 3px;
 }
+h2#page-title {
+	margin-top: 0px;
+}
 
 /** Paging **/
 .paging {

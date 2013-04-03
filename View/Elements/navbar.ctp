@@ -19,8 +19,9 @@
 		<li class="sublinks">
 			<?php
 				echo $this->Html->link('Courses', array(
-					'controller' => 'news', 
-					'action' => 'index'
+					'controller' => 'pages', 
+					'action' => 'display',
+					'courses'
 				));
 				echo $this->Html->link('Projects',
 					'http://www.pace.edu/lubin/departments-and-research-centers/entrepreneurship-lubin/entrepreneurship-lab'

@@ -1,5 +1,5 @@
 <div id="about">
-	<h2>ABOUT US</h2>
+	<h2 id="page-title">ABOUT US</h2>
 	<p>
 		This NSF funded project under award number 0942732 is a proposed five-course interdisciplinary 
 		Bachelor of Arts in Computer Science concentration, Technology Entrepreneurship, in the Department 

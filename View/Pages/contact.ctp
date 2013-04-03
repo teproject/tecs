@@ -1,5 +1,5 @@
 <div id="contact">
-	<h2>CONTACT US</h2>
+	<h2 id="page-title">CONTACT US</h2>
 	<div class="contact">
 		<?php
 			echo $this->Html->image('pages/Anthony_Joseph.jpg', array(
