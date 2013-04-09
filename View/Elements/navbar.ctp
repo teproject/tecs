@@ -15,19 +15,13 @@
 		?></li>
 	</ul>
 	<ul class="grid_3">
-		<li><a class="dropdown" href="#">TE Program</a></li>
-		<li class="sublinks">
-			<?php
+		<li><?php
 				echo $this->Html->link('Courses', array(
 					'controller' => 'pages', 
 					'action' => 'display',
 					'courses'
 				));
-				echo $this->Html->link('Projects',
-					'http://www.pace.edu/lubin/departments-and-research-centers/entrepreneurship-lubin/entrepreneurship-lab'
-				);
-			?>
-		</li>
+		?></li>
 	</ul>
 	<ul class="grid_4">
 		<li><a class="dropdown" href="#">Resources</a></li>

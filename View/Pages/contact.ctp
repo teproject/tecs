@@ -32,9 +32,7 @@
 				</tr>
 				<tr>
 					<th>Office Hours:</th>
-					<td>
-						Tue 9:00am -- 11:00am, 1:30pm -- 2:30pm;<br>
-						Thu 9:00am -- 11:00am</td>
+					<td>Wednesday, 9:00am -- 2:00pm</td>
 				</tr>
 			</tbody>
 		</table>
@@ -72,8 +70,8 @@
 				<tr>
 					<th>Office Hours:</th>
 					<td>
-						Tue 7:00am -- 5:00pm;<br>
-						Thu 7:00am -- 5:00pm
+						Tuesday, 7:00am -- 5:00pm;<br>
+						Thursday, 7:00am -- 5:00pm
 					</td>
 				</tr>
 			</tbody>

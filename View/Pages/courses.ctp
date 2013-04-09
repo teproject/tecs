@@ -29,7 +29,7 @@
 	</div>
 	
 	<div class="collapsible-item">
-		<h3 class="collapsible" id="section4">Modeling of Financial Processes and Systems through SOA Methodology</h3>
+		<h3 class="collapsible" id="section4">Modeling of Financial Processes and Systems</h3>
 		<div class="container">
 			<div class="content">
 				<p>This course introduces students to models of financial processes through service-oriented architecture (SOA) methods and cloud computing. The focus of the course is on a program management methodology for projects enabling efficiency and flexibility in processes through Web services and SOA. The course concludes with students presenting models of financial processes and systems that contribute a competitive edge to financial firms through innovative technologies of leading edge SOA technology firms that market to Wall Street and other financial districts.</p>
