@@ -43,10 +43,15 @@ div.content {
     font-family:"Helvetica Neue", Arial, Helvetica, Geneva, sans-serif; 
 	width: 610px;
 }
-div.content ul, div.content p {
+div.content p {
+	padding: 3px;
+	margin-bottom: 5px;
+}
+div.content ul {
     padding:0;
     margin:0;
-    padding:3px; }
+    padding: 3px 3px 3px 12px;
+}
 div.content ul li {
     list-style-position:inside;
     line-height:25px; }
