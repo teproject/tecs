@@ -339,7 +339,10 @@ span.actions a  {
 #footer img {
 	height: inherit;
 }
-
+#footer #disclaimer {
+	margin-left: 180px;
+	margin-right: 180px;
+}
 #footer #disclaimer p{
 	color: #ffffff;
 	font-size: .8em;
