@@ -44,6 +44,58 @@
 			</div>
 		</div>
 	</div>
+	<div class="collapsible-item">
+		<h3 class="collapsible" id="section6">Projects</h3>
+		<div class="container">
+			<div class="content">
+				<p> Following is a listing of all courses pretaining to the above courses: </p>
+				<ul>
+					<li><?php
+						echo $this->Html->link(
+							'CS 325/IS 348 (Data Mining) - Class Project - Spring 2011',
+							'/files/cs325_cit348%20class%20spring2011%20project.doc'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'CS 397N/CIT 397K (Technology Entrepreneurship) - Fall 2011',
+							'/files/cs397N_cit397K%20class%20fall%202011%20project.doc'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'CS 397D (Financial computing) - Spring 2012',
+							'/files/cs397D%5BFinancial%20Computing%20n%20Entrepreneurship%5D.doc'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'CIT 348 (Data Mining) - Minimizing Adverse Drugs Reaction in ER patient in an Interconnected World',
+							'/files/Adverse%20Drug%20Reaction%20in%20ER%5Bclass%20project%5D.docx'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'Technology Enterpreneurship (Sample Project)',
+							'/files/TE-sample%20project.pptx'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'The Fame Business Plan (Sample Business Plan)',
+							'/files/TheFamePlan.docx'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'Class Mentors',
+							'/files/mentors%20record.docx'
+						);
+					?></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 <?php 
 	echo $this->Html->css('collapsible');
