@@ -5,7 +5,11 @@
 		<h3 class="collapsible" id="section1">Data Mining</h3>
 		<div class="container">
 			<div class="content">
-				<p>This course will provide an overview of topics such as introduction to data mining and knowledge history; data mining with structured and unstructured data; foundations of pattern clustering; clustering paradigms; clustering for data mining; data mining using neural networks and genetic algorithms; fast discovery of association rules; applications of data mining to pattern classification; and feature selection. The goal of this course is to introduce students to current machine learning and related data mining methods. It is intended to provide enough background to allow students to apply machine learning and data mining techniques to learning problems in a variety of application areas.</p>
+				<p>This course will provide an overview of topics such as introduction to data mining and knowledge history; data mining with structured and unstructured data; foundations of pattern clustering; clustering paradigms; clustering for data mining; data mining using neural networks and genetic algorithms; fast discovery of association rules; applications of data mining to pattern classification; and feature selection. The goal of this course is to introduce students to current machine learning and related data mining methods. It is intended to provide enough background to allow students to apply machine learning and data mining techniques to learning problems in a variety of application areas.
+			<?php echo $this->Html->link(
+							'Learn more...',
+							'/files/syllabus/syllabus-sp2011%5BCS%20325_CIT348%5D.doc'
+				); ?></p>
 			</div>
 		</div>
 	</div>
@@ -14,7 +18,11 @@
 		<h3 class="collapsible" id="section2">Technology Entrepreneurship</h3>
 		<div class="container">
 			<div class="content">
-				<p>This is an interdisciplinary course designed to provide students with an entrepreneurial mindset in the context of information and computational technologies and algorithms as well as to equip them with tools appropriate to identifying real business opportunities worthy of pursuit. Technology industries and applications will be emphasized along with computing opportunities. The main concepts covered are creativity and innovation; market analysis; customer-driven product identification and development; technology-based business creation, financing, and management; competitive business plans; and niche marketing. Two key components of this course will be a project to develop a business plan for a technology venture around a specific product or system, wherein entrepreneurs will serve as mentors to students and teams, and a business plan competition where other industry experts and entrepreneurs will serve as judges. The course will be supplemented with up to three guest lectures as well as the review and analysis of entrepreneur case studies.</p>
+				<p>This is an interdisciplinary course designed to provide students with an entrepreneurial mindset in the context of information and computational technologies and algorithms as well as to equip them with tools appropriate to identifying real business opportunities worthy of pursuit. Technology industries and applications will be emphasized along with computing opportunities. The main concepts covered are creativity and innovation; market analysis; customer-driven product identification and development; technology-based business creation, financing, and management; competitive business plans; and niche marketing. Two key components of this course will be a project to develop a business plan for a technology venture around a specific product or system, wherein entrepreneurs will serve as mentors to students and teams, and a business plan competition where other industry experts and entrepreneurs will serve as judges. The course will be supplemented with up to three guest lectures as well as the review and analysis of entrepreneur case studies.
+				<?php echo $this->Html->link(
+							'Learn more...',
+							'/files/syllabus/Techneurship-syllabus%20%5BCS397N_CIT397K_%20fall%202011%5D.doc'
+				); ?></p>
 			</div>
 		</div>
 	</div>
@@ -23,7 +31,11 @@
 		<h3 class="collapsible" id="section3">Financial Computing and Entrepreneurship</h3>
 		<div class="container">
 			<div class="content">
-				<p>This interdisciplinary course integrates computing (computer science, information systems, and information technology), finance, and applied entrepreneurship to provide the student analytical, quantitative, application, and entrepreneurial skills needed for sound and strategic financial decision making and information technology based product creation. The course will emphasize creative problem solving of and development innovative algorithms for financial problems relating to such topics as financial analysis and time value of money, derivative products, portfolio management, hedging strategies, arbitrage, risks, Black-Scholes model, interest rate models, and fixed income analysis. Within a collaborative team environment, the student will develop innovative algorithmic solutions for financial problems as well as analyze, evaluate model financial time series with neural networks; the algorithms will be implemented in a high-level computer language (e.g. Java, C/C++, or Matlab) into prototypes for potentially marketable financial software products. An entrepreneurial perspective will permeate the course in the form of creative thinking and calculated risk-taking in the design and development of the algorithms and prototypes, and the development of a high-quality business plan for an information technology company to market the likely software products. There will be a reliance on entrepreneurs for team mentors, project selection and scaling, and guest speakers.</p>
+				<p>This interdisciplinary course integrates computing (computer science, information systems, and information technology), finance, and applied entrepreneurship to provide the student analytical, quantitative, application, and entrepreneurial skills needed for sound and strategic financial decision making and information technology based product creation. The course will emphasize creative problem solving of and development innovative algorithms for financial problems relating to such topics as financial analysis and time value of money, derivative products, portfolio management, hedging strategies, arbitrage, risks, Black-Scholes model, interest rate models, and fixed income analysis. Within a collaborative team environment, the student will develop innovative algorithmic solutions for financial problems as well as analyze, evaluate model financial time series with neural networks; the algorithms will be implemented in a high-level computer language (e.g. Java, C/C++, or Matlab) into prototypes for potentially marketable financial software products. An entrepreneurial perspective will permeate the course in the form of creative thinking and calculated risk-taking in the design and development of the algorithms and prototypes, and the development of a high-quality business plan for an information technology company to market the likely software products. There will be a reliance on entrepreneurs for team mentors, project selection and scaling, and guest speakers.
+				<?php echo $this->Html->link(
+							'Learn more...',
+							'/files/syllabus/finacomputing-syllabus%5Bcs397d%5D.doc'
+				); ?></p>
 			</div>
 		</div>
 	</div>
@@ -53,43 +65,43 @@
 					<li><?php
 						echo $this->Html->link(
 							'CS 325/IS 348 (Data Mining) - Class Project - Spring 2011',
-							'/files/cs325_cit348%20class%20spring2011%20project.doc'
+							'/files/projects/cs325_cit348%20class%20spring2011%20project.doc'
 						);
 					?></li>
 					<li><?php
 						echo $this->Html->link(
 							'CS 397N/CIT 397K (Technology Entrepreneurship) - Fall 2011',
-							'/files/cs397N_cit397K%20class%20fall%202011%20project.doc'
+							'/files/projects/cs397N_cit397K%20class%20fall%202011%20project.doc'
 						);
 					?></li>
 					<li><?php
 						echo $this->Html->link(
 							'CS 397D (Financial computing) - Spring 2012',
-							'/files/cs397D%5BFinancial%20Computing%20n%20Entrepreneurship%5D.doc'
+							'/files/projects/cs397D%5BFinancial%20Computing%20n%20Entrepreneurship%5D.doc'
 						);
 					?></li>
 					<li><?php
 						echo $this->Html->link(
 							'CIT 348 (Data Mining) - Minimizing Adverse Drugs Reaction in ER patient in an Interconnected World',
-							'/files/Adverse%20Drug%20Reaction%20in%20ER%5Bclass%20project%5D.docx'
+							'/files/projects/Adverse%20Drug%20Reaction%20in%20ER%5Bclass%20project%5D.docx'
 						);
 					?></li>
 					<li><?php
 						echo $this->Html->link(
 							'Technology Enterpreneurship (Sample Project)',
-							'/files/TE-sample%20project.pptx'
+							'/files/projects/TE-sample%20project.pptx'
 						);
 					?></li>
 					<li><?php
 						echo $this->Html->link(
 							'The Fame Business Plan (Sample Business Plan)',
-							'/files/TheFamePlan.docx'
+							'/files/projects/TheFamePlan.docx'
 						);
 					?></li>
 					<li><?php
 						echo $this->Html->link(
 							'Class Mentors',
-							'/files/mentors%20record.docx'
+							'/files/projects/mentors%20record.docx'
 						);
 					?></li>
 				</ul>
