@@ -42,6 +42,7 @@ class PagesController extends AppController {
 		if($page == 'home'){
 			// load base layout:
 			$layout = 'base';
+			$title_for_layout = "Technology Entrepreneurship at Pace University";
 			
 			// grab latest news:
 			$this->loadModel('News');

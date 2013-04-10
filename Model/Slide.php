@@ -97,7 +97,7 @@ class Slide extends AppModel {
 	
 	public function getPublished(){
 		return $this->find('all', array(
-			'oder' => array('Slide.created DESC'),
+			'order' => array('Slide.created ASC'),
 			'conditions' => array(
 				'Slide.published' => 'Yes'
 			)				
