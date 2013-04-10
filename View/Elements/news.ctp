@@ -10,6 +10,7 @@
 							'class'=>'thumb',
 							'alt' => $news['News']['title']
 					)), array(
+					'controller' => 'news',
 					'action' => 'view',
 					$news['News']['id']
 				), array(
@@ -24,6 +25,7 @@
 			//echo '<div class="title">'.$news['News']['title'].'</div>';
 			echo '<div class="title">'.$this->Html->link(
 				$news['News']['title'], array(
+					'controller' => 'news',
 					'action' => 'view',
 					$news['News']['id']
 				)).'</div>';
