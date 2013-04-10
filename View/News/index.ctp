@@ -11,6 +11,7 @@
 	<ul id="news">
 	<?php 
 		if (!empty($news)){
+			$news = array_reverse($news);
 			foreach ($news as $news) {
 				echo '<li class="news-item">';
 				echo $this->Html->link($this->upload->image($news, 'News.photo', array(
