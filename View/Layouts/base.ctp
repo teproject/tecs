@@ -54,8 +54,8 @@
 						width: width,
 						position: 'absolute',
 						top: ($(this).height() + 3) + 'px',
-						marginLeft: (outerWidth-width)/2,
-						marginRight: (outerWidth-width)/2,
+						//marginLeft: (outerWidth-width)/2,
+						//marginRight: (outerWidth-width)/2,
 						zIndex: 1000
 					});
 					submenu.stop().slideDown(300);
@@ -71,6 +71,7 @@
 					continuous: true
 				});
 				$(".title").ellipsis();
+				$(".content").ellipsis();
 			});
 		</script>
 	</body>
