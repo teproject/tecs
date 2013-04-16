@@ -44,7 +44,11 @@
 		<h3 class="collapsible" id="section4">Modeling of Financial Processes and Systems</h3>
 		<div class="container">
 			<div class="content">
-				<p>This course introduces students to models of financial processes through service-oriented architecture (SOA) methods and cloud computing. The focus of the course is on a program management methodology for projects enabling efficiency and flexibility in processes through Web services and SOA. The course concludes with students presenting models of financial processes and systems that contribute a competitive edge to financial firms through innovative technologies of leading edge SOA technology firms that market to Wall Street and other financial districts.</p>
+				<p>This course introduces students to models of financial processes through service-oriented architecture (SOA) methods and cloud computing. The focus of the course is on a program management methodology for projects enabling efficiency and flexibility in processes through Web services and SOA. The course concludes with students presenting models of financial processes and systems that contribute a competitive edge to financial firms through innovative technologies of leading edge SOA technology firms that market to Wall Street and other financial districts.
+				<?php echo $this->Html->link(
+					'Learn more...',
+					'/files/syllabus/modeling%20%20financial%20processes-syllabus%5bcs398A%5d.doc'
+				); ?></p>
 			</div>
 		</div>
 	</div>
@@ -52,7 +56,11 @@
 		<h3 class="collapsible" id="section5">Entrepreneurial Health Informatics</h3>
 		<div class="container">
 			<div class="content">
-				<p>This is an entrepreneurial health informatics course that provides an overview of computer based clinical record systems as well as decision support systems for medical application. The course will mainly focus on experiential entrepreneurship through innovation, evolution, and imitation in as well as algorithmic solutions for health decision support; data acquisition, processing, and analysis; and delivery systems and services. The main topics covered include health information technology systems standard and terminologies, risks and uncertainty, data and workflow modeling, data mining, data visualization, and medical decision making. Teamwork and entrepreneurship will be infused throughout the course in the form of creative critical thinking and problem-solving and calculated risk-taking in the design and development of the algorithms supported by a quality business plan for a health related information technology company. Entrepreneurs will be recruited for the roles of team mentors, project selection and scaling, and guest speakers. </p>
+				<p>This is an entrepreneurial health informatics course that provides an overview of computer based clinical record systems as well as decision support systems for medical application. The course will mainly focus on experiential entrepreneurship through innovation, evolution, and imitation in as well as algorithmic solutions for health decision support; data acquisition, processing, and analysis; and delivery systems and services. The main topics covered include health information technology systems standard and terminologies, risks and uncertainty, data and workflow modeling, data mining, data visualization, and medical decision making. Teamwork and entrepreneurship will be infused throughout the course in the form of creative critical thinking and problem-solving and calculated risk-taking in the design and development of the algorithms supported by a quality business plan for a health related information technology company. Entrepreneurs will be recruited for the roles of team mentors, project selection and scaling, and guest speakers. 
+				<?php echo $this->Html->link(
+					'Learn more...',
+					'/files/syllabus/e-healthinformatics-syllabus%20%5b%20CS398B_CIT%20397B%5d.doc'
+				); ?></p>
 			</div>
 		</div>
 	</div>
@@ -84,6 +92,18 @@
 						echo $this->Html->link(
 							'CIT 348 (Data Mining) - Minimizing Adverse Drugs Reaction in ER patient in an Interconnected World',
 							'/files/projects/Adverse%20Drug%20Reaction%20in%20ER%5Bclass%20project%5D.docx'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'CS 398A/IS 690G (Modeling Financial Process and Systems)',
+							'/files/projects/cs398A_IS690G%20fall%202012%20class%20project.doc'
+						);
+					?></li>
+					<li><?php
+						echo $this->Html->link(
+							'CS 398B/CIT 397B/CS632G/IS 690X (Entrepreneural Health Informatics)',
+							'/files/projects/cs398B_CIT397B_CS632G_IS690X%20fall%202013%20class%20project.doc'
 						);
 					?></li>
 					<li><?php
