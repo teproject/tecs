@@ -71,7 +71,11 @@
 					continuous: true
 				});
 				$(".title").ellipsis();
-				$(".content").ellipsis();
+				$("div.content").ellipsis(
+				//	'div.content', {
+					//'ellipsis' : '<a href="#">.................................</a>'
+				//}
+				);
 			});
 		</script>
 	</body>

@@ -54,7 +54,7 @@
 						'action' => 'view',
 						$news['News']['id']
 					)).'</div>';
-				echo '<div class="content">'.$news['News']['content'].'</div>';
+				echo '<div class="content"><span>'.$news['News']['content'].'</span></div>';
 				echo '</li>';
 			}
 	?>
@@ -66,3 +66,8 @@
 		}
 	?>
 </div>
+<script type="text/javascript">
+			$(document).ready(function () {
+				$("div.content").ellipsis();
+			});
+</script>
