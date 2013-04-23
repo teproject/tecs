@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 	
 	var $name = 'Users';
-	var $uses = array('Users');
+	var $uses = array('User');
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
