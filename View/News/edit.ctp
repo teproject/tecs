@@ -14,7 +14,7 @@
 		echo '<div class="control-group">';
 		echo $this->Form->label('title', 'Title', array('class' => 'control-label'));
 		echo '<div class="controls">';
-		echo $this->Form->input('title', array('label' => '', 'class' => 'input-xlarge'));
+		echo $this->Form->input('title', array('label' => '', 'class' => 'input-xlarge', 'required' => false));
 		echo '</div></div>';
 		
 		// do the same for Photo:
