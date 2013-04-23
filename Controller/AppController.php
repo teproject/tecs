@@ -37,7 +37,7 @@ class AppController extends Controller {
 		'Session',
 		'Auth' => array(
 			'loginAction' => array(
-				'controller' => 'Users',
+				'controller' => 'users',
 				'action' => 'login'
 			),
 			'authError' => 'You do not have permission to access this feature.',
@@ -73,7 +73,10 @@ class AppController extends Controller {
 		$loggedIn = $this->loggedIn();
 		$isAdmin = $this->isAdmin();
 		$this->set('loggedIn', $this->loggedIn());
-		$this->set('isAdmin', $isAdmin);	
+		$this->set('isAdmin', $isAdmin);
+		if($this->loggedIn()){
+			$this->set('userFirstName', substr($this->Auth->user('name'), 0, strpos($this->Auth->user('name'), " ")));
+		}
 	}
 	
 	// returns 'true' when the current user has authenticated, and 'false' otherwise:

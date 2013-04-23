@@ -17,6 +17,14 @@ body {
 	border: 2px solid #b9ced3;
 	border-radius: 3px;
 }
+div#header {
+	display:block;
+	height: 110px;
+}
+div#nav-bar {
+	display: block;
+	height: 40px;
+}
 h2#page-title {
 	margin-top: 0px;
 }
@@ -586,4 +594,31 @@ div.view span.date {
 	color: #ffffff;
 	margin-right: 12px;
 	margin-bottom: 6px;
+}
+
+/* Admin Panel */
+div#admin-panel {
+	height: 24px;
+	display: block;
+	margin: 0px;
+}
+div#admin-panel span#greeting {
+	font-weight: bold;
+	font-size: 17px;
+	overflow: hidden;
+	height: 24px;
+}
+div#admin-panel ul {
+	display: inline;
+	margin: 0px;
+}
+div#admin-panel ul li {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0 5px;
+	line-height: 24px;
+	font-size: 17px;
+}
+img.action-icon {
+	margin: 0px 10px 0px 0px;
 }

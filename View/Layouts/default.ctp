@@ -26,6 +26,7 @@
 			<?php 
 				echo $this->element('header');
 				echo $this->element('navbar');
+				echo $this->element('admin-panel');
 			?>
 			<div id="wrap">
 				<!-- Left Container -->

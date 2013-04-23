@@ -3,6 +3,9 @@ App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
 	
+	var $name = 'Users';
+	var $uses = array('Users');
+	
 	public function beforeFilter(){
 		parent::beforeFilter();
 	}
@@ -144,13 +147,5 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('You are not authorized to activate user accounts.'));
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 		}
-	}
-
-	public function dashboard(){ 
-		$this->set('title_for_layout', 'Admin Dashboard');
-		$current_user = $this->User->find('first', array(
-			'conditions' => array('id' => $this->Auth->user('id'))));
-		$this->set('user', $current_user);
-	}
-	
+	}	
 }

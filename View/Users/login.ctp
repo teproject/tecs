@@ -23,12 +23,12 @@
 	</fieldset>
 <?php echo $this->Form->button(__('Log In'), array('class'=>'btn')); ?>
 <?php
-	echo $this->Html->link('Forgot your password?', array(
+	/*echo $this->Html->link('Forgot your password?', array(
 			'controller'=>'users', 
 			'action'=>'pswdreset'
 		), array(
 			'id' => 'forgot-password'
-	));
+	));*/
 	/*echo $this->Html->link('Not a member? Sign up here.', array(
 		'controller'=>'users', 
 		'action'=>'sign_up'
