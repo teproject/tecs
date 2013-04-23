@@ -17,7 +17,8 @@
 		echo '<div class="controls">';
 		echo $this->Form->input('title', array(
 			'label' => '',
-			'class' => 'input-xlarge'
+			'class' => 'input-xlarge',
+			'required' => false
 		));
 		echo '</div></div>';
 
