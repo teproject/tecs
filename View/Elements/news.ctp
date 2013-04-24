@@ -1,5 +1,5 @@
 <!-- News -->
-<h3>News &lt; Noteworthy</h3>
+<h3>News &amp; Noteworthy</h3>
 <ul id="news"><?php 
 	foreach($news as $news){
 		echo '<li>';
