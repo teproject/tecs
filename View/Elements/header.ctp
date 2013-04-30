@@ -1,7 +1,7 @@
 <!-- Header -->
 <div id="header">
 	<?php 
-		echo $this->Html->image('header/TecchnologyEntrepreneurship.jpg', array(
+		echo $this->Html->image('header/TecchnologyEntrepreneurship.png', array(
 			'alt' => 'Technology Entrepreneurship at Pace University',
 			'url' => 'http://csis.pace.edu/tecs',
 			'height' => '110',

@@ -88,7 +88,7 @@
 			'id' => 'wysihtml5-textarea',
 			'placeholder' => 'Enter your content...',
 			'label' => false,
-			'required' => false,
+			'required' => false,	// needed since the 'required' attribute causes newer browsers to freak out
 			'style' => 'margin: 0 25px 20px; font-size: 1.1em; line-height: 130%; height: 300px; width: 90%'
 		));
 		
