@@ -50,7 +50,7 @@ class AppController extends Controller {
 				)
 			),
 			'authorize' => 'Controller',	// handle authorization through the controller's isAuthorized() function
-			'loginRedirect' => '/users'
+			'loginRedirect' => '/news'
 		)
 	);		
 

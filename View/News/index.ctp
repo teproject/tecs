@@ -1,7 +1,7 @@
 <div class="news index">
 		<h2><?php echo __('News'); ?></h2>
 		<?php
-			if($isAdmin){
+			if($loggedIn){
 				echo $this->Html->link(
 					'<span id="add-action">New Article</span>', 
 					array('action' => 'add'), 
@@ -27,7 +27,7 @@
 					)
 				);
 				echo '<span class="date">'.date('M. j, Y', strtotime($news['News']['created'])).'</span>';
-				if($isAdmin){
+				if($loggedIn){
 					echo '<span class="actions">';
 					echo '&nbsp'.$this->Html->link(
 						$this->Html->image("icons/edit.png", array( 

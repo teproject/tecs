@@ -9,7 +9,17 @@ class SlidesController extends AppController {
 	}
 	
 	public function isAuthorized($user = null){
-		return parent::isAuthorized($user);
+		$isAuthorized = false; 
+		if (parent::loggedIn()){ 
+			if($this->action == 'add'
+				|| $this->action == 'index'
+				|| $this->action == 'delete' 
+				|| $this->action == 'edit')
+					$isAuthorized = true;
+		} else {
+			$isAuthorized = parent::isAuthorized($user);
+		}
+		return $isAuthorized;
 	}
 
 	public function view($id = null) {

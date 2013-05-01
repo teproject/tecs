@@ -12,7 +12,6 @@ class UsersController extends AppController {
 	
 	public function isAuthorized($user = null){
 		$isAuthorized = false;
-		
 		if($this->action == 'login'
 			|| $this->action == 'logout'){
 				$isAuthorized = true;
@@ -147,5 +146,5 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('You are not authorized to activate user accounts.'));
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 		}
-	}	
+	}
 }
