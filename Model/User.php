@@ -8,7 +8,7 @@ class User extends AppModel {
 		'group' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please choose a group for this user.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -46,7 +46,7 @@ class User extends AppModel {
 		'password' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Please choose a password for your account.',
+				'message' => 'Please choose a password for this account.',
 				'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

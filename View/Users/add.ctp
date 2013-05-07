@@ -1,20 +1,45 @@
 <div class="users form">
-<?php echo $this->Form->create('User'); ?>
+<?php echo $this->Form->create('User', array('class' => 'well')); ?>
 	<fieldset>
 		<legend><?php echo __('Add User'); ?></legend>
 	<?php
-		echo $this->Form->input('group');
 		echo $this->Form->input('name');
 		echo $this->Form->input('email');
 		echo $this->Form->input('password');
+		echo $this->Form->input('group', array(
+				'type' => 'radio',
+				'legend' => false,
+				'options' => array(
+					'Administrator' => 'Administrator',
+					'Member' => 'Regular Member'
+				)
+		));
 	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-	</ul>
+	<div class="form-actions">
+	<?php
+		// Save/Cancel buttons:
+		echo '<span id="primary-actions">';
+		echo $this->Form->button(__('Save'), array(
+			'class' => 'btn btn-primary',
+			'name' => 'action',
+			'value' => 'save'
+		));
+		echo $this->Form->button(__('Cancel'), array(
+			'class' => 'btn',
+			'name' => 'action',
+			'onclick' => "return confirm('Are you sure you want to cancel?');",
+			'value' => 'cancel'
+		));
+		echo '</span>';
+		//Index button:
+		echo '<span id="secondary-actions">';
+		echo $this->Form->button(__('List Users'), array(
+			'class' => 'btn green',
+			'name' => 'action',
+			'value' => 'index'
+		));
+		echo '</span>';
+		echo '</fieldset></div>';
+		echo $this->Form->end();
+	?>
 </div>

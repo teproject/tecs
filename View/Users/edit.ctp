@@ -9,7 +9,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
 		echo $this->Form->input('email');
-				echo $this->Form->input('group', array(
+		echo $this->Form->input('group', array(
 				'type' => 'radio',
 				'legend' => false,
 				'options' => array(
@@ -24,28 +24,38 @@
 				echo "This user's account has already been activated.";
 			}
 		}
-	?>
-	<div class="form-actions">
-	<?php
-		echo $this->Form->button(__('Save Changes'), array(
-			'class'=>'btn btn-primary',
-			'div' => false
+	
+		// Form Actions:		
+		echo '<div class="form-actions">';
+		// Save/Cancel buttons:
+		echo '<span id="primary-actions">';
+		echo $this->Form->button(__('Save'), array(
+			'class' => 'btn btn-primary',
+			'name' => 'action',
+			'value' => 'save'
 		));
 		echo $this->Form->button(__('Cancel'), array(
 			'class' => 'btn',
-			'div' => false,
-			'style' => 'margin-left: 5px;'
+			'name' => 'action',
+			'onclick' => "return confirm('Are you sure you want to cancel?');",
+			'value' => 'cancel'
 		));
+		echo '</span>';
+		//Index button:
+		echo '<span id="secondary-actions">';
+		echo $this->Form->button(__('Delete'), array(
+			'class' => 'btn red',
+			'name' => 'action',
+			'onclick' => "return confirm('Are you sure you want to delete this user?');",
+			'value' => 'delete'
+		));
+		echo $this->Form->button(__('List News'), array(
+			'class' => 'btn green',
+			'name' => 'action',
+			'value' => 'index'
+		));
+		echo '</span>';
+		echo '</div>';
 		echo $this->Form->end();
 	?>
-	</div>
-	</fieldset>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-	</ul>
 </div>
