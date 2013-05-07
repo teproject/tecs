@@ -27,3 +27,12 @@
 		echo '</li>';
 	}
 ?></ul>
+<?php
+	echo $this->Html->link(
+		"Show More News...", array(
+			'controller' => 'news',
+			'action' => 'index'
+		), array(
+			'id' => 'show-more'
+	));
+?>

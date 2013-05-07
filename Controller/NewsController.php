@@ -5,6 +5,13 @@ class NewsController extends AppController {
 	var $name = 'News';
 	var $uses = array('News');
 
+	public $paginate = array(
+		'limit' => 4,
+		'order' => array(
+			'News.created' => 'desc' 
+	));
+	
+	
 	public function beforeFilter(){
 		parent::beforeFilter();
 		if($this->isAuthorized($this->Auth->user()))
@@ -29,7 +36,7 @@ class NewsController extends AppController {
 	
 	public function index() {
 		$this->News->recursive = 0;
-		$this->set('news', $this->paginate());
+		$this->set('news', $this->paginate('News'));
 	}
 
 	public function view($id = null) {

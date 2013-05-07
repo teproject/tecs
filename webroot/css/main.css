@@ -33,7 +33,7 @@ h2#page-title {
 .paging {
 	background:#fff;
 	color: #ccc;
-	margin-top: 1em;
+	margin: 1em 5px;
 	clear:both;
 }
 .paging .current,
@@ -219,6 +219,12 @@ h2#page-title {
 	height: auto;
 	overflow: hidden;
 	text-align: justify;
+}
+a#show-more {
+	display:inline-block;
+	font-size: 16px;
+	margin-left: 510px;
+	margin-bottom: 10px;
 }
 #about {
 	padding: 10px;
