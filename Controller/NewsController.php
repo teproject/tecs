@@ -8,7 +8,7 @@ class NewsController extends AppController {
 	public $paginate = array(
 		'limit' => 4,
 		'order' => array(
-			'News.created' => 'desc' 
+			'News.created' => 'asc' 
 	));
 	
 	

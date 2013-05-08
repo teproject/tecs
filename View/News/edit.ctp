@@ -125,7 +125,7 @@
 		echo $this->Form->button(__('Delete'), array(
 			'class' => 'btn red',
 			'name' => 'action',
-			'onclick' => "return confirm('Are you sure you want to delete this slide?');",
+			'onclick' => "return confirm('Are you sure you want to delete this article?');",
 			'value' => 'delete'
 		));
 		echo $this->Form->button(__('List News'), array(
