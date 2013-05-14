@@ -7,11 +7,16 @@
 		<legend><?php echo __('Edit User'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-		echo $this->Form->input('email');
+		echo $this->Form->input('name', array(
+			'required' => false
+		));
+		echo $this->Form->input('email', array(
+			'required' => false
+		));
 		echo $this->Form->input('group', array(
 				'type' => 'radio',
 				'legend' => false,
+				'required' => false,
 				'options' => array(
 					'Administrator' => 'Administrator',
 					'Member' => 'Regular Member'

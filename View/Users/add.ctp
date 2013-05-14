@@ -3,12 +3,19 @@
 	<fieldset>
 		<legend><?php echo __('Add User'); ?></legend>
 	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('email');
-		echo $this->Form->input('password');
+		echo $this->Form->input('name', array(
+			'required' => false
+		));
+		echo $this->Form->input('email', array(
+			'required' => false
+		));
+		echo $this->Form->input('password', array(
+			'required' => false
+		));
 		echo $this->Form->input('group', array(
 				'type' => 'radio',
 				'legend' => false,
+				'required' => false,
 				'options' => array(
 					'Administrator' => 'Administrator',
 					'Member' => 'Regular Member'

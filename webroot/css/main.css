@@ -17,16 +17,16 @@ body {
 	border: 2px solid #b9ced3;
 	border-radius: 3px;
 }
-div#header {
+#header {
 	display:block;
 	height: 110px;
 }
-div#nav-bar {
+#nav-bar {
 	display: block;
 	height: 40px;
 }
-h2#page-title {
-	margin-top: 0px;
+#page-title {
+	margin-top: 0;
 }
 
 /** Paging **/
