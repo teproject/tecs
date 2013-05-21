@@ -44,7 +44,7 @@ body {
 }
 .paging > span {
 	display: inline-block;
-	border: 1px solid #ccc;
+	border: 1px solid #B9CED4;
 	border-left: 0;
 }
 .paging > span:hover {
@@ -170,10 +170,10 @@ body {
 	min-height: 70px;
 	padding: 5px 0;
 	display: block;
-	border-bottom: solid 1px #333333;
+	border-bottom: solid 1px #B9CED3;
 	width: 100%;
 	min-height: 128px;
-	max-height: 156px;
+	max-height: 172px;
 }
 #news li:last-child {
 	border-bottom: none;
@@ -204,17 +204,18 @@ body {
 #news div.title {
 	color: #39434C;
 	font-size: 18px;
+	line-height: 26px;
 	width: 70%;
 	float:left;
 	min-height: 26px;
-	max-height: 44px;
+	max-height: 50px;
 	overflow: hidden;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
 #news div.content {
 	width: 450px;
-	max-height: 84px;
+	max-height: 96px;
 	height: auto;
 	overflow: hidden;
 	text-align: justify;
@@ -318,6 +319,9 @@ a#show-more {
 div.index {
 	display: block;
 	position: relative;
+}
+div.index h2{
+	margin: 5px 0 5px 3px;
 }
 #add-action {
 	position: absolute;
@@ -506,7 +510,7 @@ div#contact h2 {
 }
 div#contact div.contact{
 	background-color: #F5F5F5;
-    border: 1px solid #E3E3E3;
+    border: 1px solid #B9CED4;
     border-radius: 4px 4px 4px 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
     min-height: 20px;
