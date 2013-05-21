@@ -13,8 +13,8 @@ body {
 #container {
 	background-color: #ffffff;
 	padding-top: 5px;
-	border: 1px solid #b9ced3;
-	border-radius: 3px;
+	border-left: 1px solid #b9ced3;
+	border-right: 1px solid #b9ced3;
 }
 #header {
 	display:block;
