@@ -36,7 +36,13 @@ class NewsController extends AppController {
 	
 	public function index() {
 		$this->News->recursive = 0;
-		$this->set('news', $this->paginate('News'));
+		if(parent::loggedIn()) {
+			$this->set('news', $this->paginate('News'));
+		} else {
+			$this->set('news', $this->paginate('News', array(
+				'News.published' => 'Yes'
+			)));
+		}
 	}
 
 	public function view($id = null) {
@@ -44,7 +50,13 @@ class NewsController extends AppController {
 		if (!$this->News->exists()) {
 			throw new NotFoundException(__('Invalid news'));
 		}
-		$this->set('news', $this->News->read(null, $id));
+		$newsItem = $this->News->read(null, $id);
+		if(parent::loggedIn() || $newsItem['News']['publushed']=='Yes') {
+			$this->set('news', $newsItem);
+		} else {
+			$this->Session->setFlash(__('You do not have permission to view this article'));
+			$this->redirect(array('action' => 'index'));
+		}
 	}
 
 	public function add() {
