@@ -51,7 +51,7 @@ class UsersController extends AppController {
 				case 'index':
 					$this->redirect(array('action' => 'index'));
 				default:
-					$this->Session->setFlash(__('The news could not be saved. Please, try again.'));
+					$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		}
 	}
