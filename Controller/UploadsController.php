@@ -6,15 +6,15 @@ class UploadsController extends AppController {
 		parent::beforeFilter();
 		if(parent::isAdmin())
 			$this->layout = 'file-index';
-		if($this->isAuthorized())
+		if($this->isAuthorized($this->Auth->user()))
 			$this->Auth->allow($this->action);
 	}
 	
-	public function isAuthorized(){
+	public function isAuthorized($user){
 		if(parent::loggedIn() && $this->action == 'index'){
 			return true;
 		} else {
-			return parent::isAuthorized();
+			return parent::isAuthorized($user);
 		}
 	}
 
