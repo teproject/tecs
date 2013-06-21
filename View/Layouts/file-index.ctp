@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -9,7 +10,6 @@
 			echo $this->Html->css('main');
 			echo $this->Html->css('960-16-col-layout');
 			echo $this->Html->css('nav-bar');
-			echo $this->Html->css('screen');
 			echo $this->Html->css('bootstrap');
 			
 			echo $this->Html->script('jquery-1.8.2.min');
@@ -29,18 +29,11 @@
 				echo $this->element('admin-panel');
 			?>
 			<div id="wrap">
-				<!-- Left Container -->
-				<div id="left-container" class="grid_11">
+				<div id="left-container" class="grid_16">
 					<?php echo $this->Session->flash(); ?>
 					<?php echo $this->Session->flash('auth'); ?>
-					<?php echo $this->element('slider'); ?>
-					<?php echo $this->element('news'); ?>
-				</div>
-				<!-- Right Container -->
-				<div id="right-container" class="grid_5">
-					<?php echo $this->element('right-col'); ?>
-				</div>
-			
+					<?php echo $this->fetch('content'); ?>
+				</div>			
 			</div>
 			<?php echo $this->element('footer'); ?>
 		</div>
@@ -65,19 +58,6 @@
 						$(this).slideUp(300);
 					});
 				});
-			});
-			// activate slideshow
-			$(document).ready(function () {
-				$("#slider").easySlider({
-					auto: true,
-					continuous: true
-				});
-				$(".title").ellipsis();
-				$("div.content").ellipsis(
-				//	'div.content', {
-					//'ellipsis' : '<a href="#">.................................</a>'
-				//}
-				);
 			});
 		</script>
 		<script type="text/javascript">

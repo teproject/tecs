@@ -2,11 +2,21 @@
 	if($loggedIn){
 		echo '<div id="admin-panel">';
 		if($isAdmin) {
-			echo '<span id="greeting" class="grid_3">Welcome, Admin!</span>';
+			echo '<ul>';
+			echo '<li class="grid_3">'.$this->Html->link(
+				$this->Html->image('icons/manage-files.png', array(
+					'alt' => '',
+					'class' => 'action-icon'
+				)).'Manage Files', array(
+					'controller' => 'uploads', 
+					'action' => 'index'
+				), array(
+					'escape' => false
+		)).'</li>';
 		} else {
 			echo '<span id="greeting" class="grid_3">Welcome, Member!</span>';
+			echo '<ul>';
 		} 
-		echo '<ul>';
 		echo '<li class="grid_3">'.$this->Html->link(
 			$this->Html->image('icons/manage-news.png', array(
 				'alt' => '',
@@ -39,7 +49,16 @@
 					'escape' => false
 			)).'</li>';
 		} else {
-			echo '<li class="grid_4">&nbsp;</li>';
+			echo '<li class="grid_4">'.$this->Html->link(
+				$this->Html->image('icons/manage-files.png', array(
+					'alt' => '',
+					'class' => 'action-icon'
+				)).'View Files', array(
+					'controller' => 'uploads', 
+					'action' => 'index'
+				), array(
+					'escape' => false
+			)).'</li>';
 		}
 		echo '<li class="grid_3">'.$this->Html->link(
 			$this->Html->image('icons/logout.png', array(

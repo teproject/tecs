@@ -130,7 +130,7 @@ class UsersController extends AppController {
 				return $this->redirect($this->Auth->redirect());
 			}
 			else{
-				$this->Session->setFlash(__('The email or password you entered is incorrect. Please try agian:'));
+				$this->Session->setFlash(__('The email or password you entered is incorrect. Please try again:'));
 			}
 		}
 	}

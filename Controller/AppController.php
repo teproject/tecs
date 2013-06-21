@@ -70,13 +70,8 @@ class AppController extends Controller {
 	
 	public function beforeFilter(){
 		//determine user authentication and administrative status for all views:
-		$loggedIn = $this->loggedIn();
-		$isAdmin = $this->isAdmin();
 		$this->set('loggedIn', $this->loggedIn());
-		$this->set('isAdmin', $isAdmin);
-		if($this->loggedIn()){
-			$this->set('userFirstName', substr($this->Auth->user('name'), 0, strpos($this->Auth->user('name'), " ")));
-		}
+		$this->set('isAdmin', $this->isAdmin());
 	}
 	
 	// returns 'true' when the current user has authenticated, and 'false' otherwise:

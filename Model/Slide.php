@@ -103,4 +103,13 @@ class Slide extends AppModel {
 			)				
 		));
 	}
+		
+
+	public function beforeSave(){
+		if(isset($this->data['Slide']['link']) 
+			&& $this->data['Slide']['link'] != '' 
+			&& !strstr($this->data['Slide']['link'], 'http://')){
+				$this->data['Slide']['link'] = 'http://'.$this->data['Slide']['link'];
+		}
+	}
 }

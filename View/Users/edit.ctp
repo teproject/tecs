@@ -54,7 +54,7 @@
 			'onclick' => "return confirm('Are you sure you want to delete this user?');",
 			'value' => 'delete'
 		));
-		echo $this->Form->button(__('List News'), array(
+		echo $this->Form->button(__('List Users'), array(
 			'class' => 'btn green',
 			'name' => 'action',
 			'value' => 'index'

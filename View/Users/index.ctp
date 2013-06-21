@@ -1,12 +1,10 @@
 <div class="users index">
 	<h2><?php echo __('Users'); ?></h2>
 	<?php
-		if($loggedIn){
-			echo $this->Html->link(
-				'<span id="add-action">New User</span>', 
-				array('action' => 'add'), 
-				array('escape' => false, 'title' => 'Add a user')); 
-		}
+		echo $this->Html->link(
+			'<span id="add-action">New User</span>', 
+			array('action' => 'add'), 
+			array('escape' => false, 'title' => 'Add a user')); 
 	?>
 	<table cellpadding="0" cellspacing="0" class="table table-striped">
 	<thead>
