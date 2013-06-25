@@ -76,7 +76,7 @@ class UploadsController extends AppController {
 				case 'delete':
 					$this->redirect(array('action' => 'delete', $id));
 				case 'cancel':
-					$this->Session->setFlash(__('Change have been discarded.'));
+					$this->Session->setFlash(__('Changes have been discarded.'));
 					$this->redirect(array('action' => 'index'));
 				case 'index':
 					$this->redirect(array('action' => 'index'));
@@ -148,12 +148,16 @@ class UploadsController extends AppController {
 		}
 		$this->viewClass = 'Media';
 		$filename = $upload['Upload']['filename'];
+		
 		$this->set(array(
 			'id' => $upload['Upload']['id'],
 			'name' => substr($filename, 0, strrpos($filename, '.')),
 			'extension' => substr(strrchr($filename, '.'), 1),
 			'path' => APP.'uploads'.DS,
 			'download' => true,
+			'mimeType' => array(
+				substr(strrchr($filename, '.'), 1) => $upload['Upload']['filemime']
+			)
 		));
 	}
 }
