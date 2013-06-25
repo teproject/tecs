@@ -46,13 +46,21 @@ class UploadsController extends AppController {
 
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->Upload->create();
-			if ($this->uploadFile() && $this->Upload->save($this->request->data)) {
-				$this->Session->setFlash(__('The upload has been saved'));
+		switch($this->data['action']){
+			case 'cancel':
+				$this->Session->setFlash(__('The upload was not saved.'));
 				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The upload could not be saved. Please, try again.'));
-			}
+			case 'index':
+				$this->redirect(array('action' => 'index'));
+			default:
+				$this->Upload->create();
+				if ($this->uploadFile() && $this->Upload->save($this->request->data)) {
+					$this->Session->setFlash(__('The upload has been saved.'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The upload could not be saved. Please, try again.'));
+				}
+		}
 		}
 		$users = $this->Upload->Owner->find('list');
 		$this->set(compact('users', 'users'));
@@ -64,16 +72,26 @@ class UploadsController extends AppController {
 			throw new NotFoundException(__('Invalid upload'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Upload->save($this->data)) {
-				$this->Session->setFlash(__('The upload has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
+			switch($this->data['action']){
+				case 'delete':
+					$this->redirect(array('action' => 'delete', $id));
+				case 'cancel':
+					$this->Session->setFlash(__('Change have been discarded.'));
+					$this->redirect(array('action' => 'index'));
+				case 'index':
+					$this->redirect(array('action' => 'index'));
+				case 'save':
+					if ($this->Upload->save($this->data)) {
+						$this->Session->setFlash(__('The upload has been saved'));
+						$this->redirect(array('action' => 'index'));
+					}
+				default:
 				$this->Session->setFlash(__('The upload could not be saved. Please, try again.'));
 			}
 		} else {
 			$this->request->data = $this->Upload->read(null, $id);
 		}
-		$users = $this->Upload->User->find('list');
+		$users = $this->Upload->Owner->find('list');
 		$this->set(compact('users', 'users'));
 	}
 

@@ -1,20 +1,38 @@
 <div class="uploads index">
 	<h2><?php echo __('Uploads');?></h2>
+	<?php
+		if($loggedIn){
+			echo $this->Html->link(
+				'<span id="add-action">New File</span>', 
+				array('action' => 'add'), 
+				array('escape' => false, 'title' => 'Upload File')); 
+		}
+	?>
 	<table cellpadding="0" cellspacing="0" class="table table-striped">
-	<tr>
-			<th><?php echo $this->Paginator->sort('filename'); ?></th>
-			<?php
-				if($isAdmin){
-					echo '<th>Shared With:</th>';
-				}
-				echo '<th>'.$this->Paginator->sort('User.name', 'Owner').'</th>';
-			?>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
+	<thead>
+		<tr>
+				<th><?php echo $this->Paginator->sort('title', 'Name'); ?></th>
+				<th><?php echo $this->Paginator->sort('filename'); ?></th>
+				<?php
+					if($isAdmin){
+						echo '<th>Shared With:</th>';
+					}
+					echo '<th>'.$this->Paginator->sort('User.name', 'Owner').'</th>';
+				?>
+				<th><?php echo $this->Paginator->sort('modified'); ?></th>
+				<th class="actions"><?php echo __('Actions'); ?></th>
+		</tr>
+	</thead>
+	<tbody>
 	<?php
 	foreach ($uploads as $upload): ?>
 	<tr>
+		<td><?php 
+			echo $this->Html->link($upload['Upload']['title'], array(
+				'action' => 'download',
+				$upload['Upload']['id']
+			));
+		?></td>
 		<td>
 			<?php 
 				echo $this->Html->link($upload['Upload']['filename'], array(
@@ -57,6 +75,7 @@
 		</td>
 	</tr>
 <?php endforeach; ?>
+	</tbody>
 	</table>
 	<p>
 	<?php
@@ -72,12 +91,4 @@
 		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Upload'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-	</ul>
 </div>
