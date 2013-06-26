@@ -17,27 +17,27 @@
 			echo '<span id="greeting" class="grid_3">Welcome, Member!</span>';
 			echo '<ul>';
 		} 
-		echo '<li class="grid_3">'.$this->Html->link(
-			$this->Html->image('icons/manage-news.png', array(
-				'alt' => '',
-				'class' => 'action-icon'
-			)).'Manage Articles', array(
-				'controller' => 'news', 
-				'action' => 'index'
-			), array(
-				'escape' => false
-		)).'</li>';
-		echo '<li class="grid_3">'.$this->Html->link(
-			$this->Html->image('icons/manage-slides.png', array(
-				'alt' => '',
-				'class' => 'action-icon'
-			)).'Manage Slides', array(
-				'controller' => 'slides', 
-				'action' => 'index'
-			), array(
-				'escape' => false
-		)).'</li>';
 		if($isAdmin){
+			echo '<li class="grid_3">'.$this->Html->link(
+				$this->Html->image('icons/manage-news.png', array(
+					'alt' => '',
+					'class' => 'action-icon'
+				)).'Manage Articles', array(
+					'controller' => 'news', 
+					'action' => 'index'
+				), array(
+					'escape' => false
+			)).'</li>';
+			echo '<li class="grid_3">'.$this->Html->link(
+				$this->Html->image('icons/manage-slides.png', array(
+					'alt' => '',
+					'class' => 'action-icon'
+				)).'Manage Slides', array(
+					'controller' => 'slides', 
+					'action' => 'index'
+				), array(
+					'escape' => false
+			)).'</li>';
 			echo '<li class="grid_4">'.$this->Html->link(
 				$this->Html->image('icons/manage-users.png', array(
 					'alt' => '',
@@ -49,7 +49,7 @@
 					'escape' => false
 			)).'</li>';
 		} else {
-			echo '<li class="grid_4">'.$this->Html->link(
+			echo '<li class="grid_10">'.$this->Html->link(
 				$this->Html->image('icons/manage-files.png', array(
 					'alt' => '',
 					'class' => 'action-icon'

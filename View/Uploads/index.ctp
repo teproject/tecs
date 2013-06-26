@@ -41,7 +41,6 @@
 				));	
 			?>&nbsp;
 		</td>
-		<?php if ($isAdmin){ ?>
 		<td>
 			<?php
 				foreach($upload['SharedUser'] as $user){
@@ -49,13 +48,17 @@
 				}
 			?>
 		</td>
+		<?php if ($isAdmin){ ?>
 		<td>
 			<?php echo $this->Html->link($upload['Owner']['name'], array('controller' => 'users', 'action' => 'view', $upload['Owner']['id'])); ?>
 		</td>
-		<?php } ?>
+		<?php } else {
+			echo $upload['Owner']['name'];
+		} ?>
 		<td><?php echo h(date('M j, Y', strtotime($upload['Upload']['modified']))); ?>&nbsp;</td>
 		<td class="actions">
 			<?php
+			if ($isAdmin){
 				echo $this->Html->link(
 					$this->Html->image('icons/edit.png', array(
 						'alt' =>'Edit', 'class'=>'edit-icon')
@@ -69,8 +72,17 @@
 					), array(
 						'action' => 'delete', $upload['Upload']['id']
 					), array('escape' => false), 
-					__('Are you sure you want to delete this user?')
+					__('Are you sure you want to delete this file?')
 				); 
+			} else {
+				echo $this->Html->link(
+					$this->Html->image('icons/download.png', array(
+						'alt' =>'Download', 'class'=>'edit-icon')
+					), array(
+						'action' => 'download', $upload['Upload']['id']
+					), array('escape' => false)
+				);
+			}
 			?>
 		</td>
 	</tr>

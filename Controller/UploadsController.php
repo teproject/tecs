@@ -4,14 +4,14 @@ class UploadsController extends AppController {
 
 	public function beforeFilter(){
 		parent::beforeFilter();
-		if(parent::isAdmin())
-			$this->layout = 'file-index';
+		$this->layout = 'file-index';
 		if($this->isAuthorized($this->Auth->user()))
 			$this->Auth->allow($this->action);
 	}
 	
 	public function isAuthorized($user){
-		if(parent::loggedIn() && $this->action == 'index'){
+		if(parent::loggedIn() && 
+			($this->action == 'index' || $this->action == 'download')){
 			return true;
 		} else {
 			return parent::isAuthorized($user);
@@ -143,8 +143,8 @@ class UploadsController extends AppController {
 			)
 		));
 		if (!$upload) {
-			$this->Session->setFlash(__('Invalid id for upload', true));
-			$this->redirect(array('action' => 'index'));
+			$this->Session->setFlash(__('This file does not exist, or you do not have permission to download it.', true));
+			$this->redirect('/');
 		}
 		$this->viewClass = 'Media';
 		$filename = $upload['Upload']['filename'];

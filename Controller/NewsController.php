@@ -23,11 +23,11 @@ class NewsController extends AppController {
 		$isAuthorized = false; 
 		if($this->action == 'index' || $this->action == 'view') {
 			$isAuthorized = true;
-		} else if (parent::loggedIn()){ 
+		} else if (parent::loggedIn()){/* 
 			if($this->action == 'add' 
 				|| $this->action == 'delete' 
 				|| $this->action == 'edit')
-					$isAuthorized = true;
+					$isAuthorized = true;*/
 		} else {
 			$isAuthorized = parent::isAuthorized($user);
 		}

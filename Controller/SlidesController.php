@@ -11,11 +11,11 @@ class SlidesController extends AppController {
 	public function isAuthorized($user = null){
 		$isAuthorized = false; 
 		if (parent::loggedIn()){ 
-			if($this->action == 'add'
+			/*if($this->action == 'add'
 				|| $this->action == 'index'
 				|| $this->action == 'delete' 
 				|| $this->action == 'edit')
-					$isAuthorized = true;
+					$isAuthorized = true;*/
 		} else {
 			$isAuthorized = parent::isAuthorized($user);
 		}

@@ -27,7 +27,7 @@
 					)
 				);
 				echo '<span class="date">'.date('M. j, Y', strtotime($news['News']['created'])).'</span>';
-				if($loggedIn){
+				if($isAdmin){
 					echo '<span class="actions">';
 					echo '&nbsp'.$this->Html->link(
 						$this->Html->image("icons/edit.png", array( 
