@@ -41,6 +41,7 @@
 				));	
 			?>&nbsp;
 		</td>
+		<?php if($isAdmin){ ?>
 		<td>
 			<?php
 				foreach($upload['SharedUser'] as $user){
@@ -48,13 +49,15 @@
 				}
 			?>
 		</td>
-		<?php if ($isAdmin){ ?>
+		<?php } ?>
 		<td>
-			<?php echo $this->Html->link($upload['Owner']['name'], array('controller' => 'users', 'action' => 'view', $upload['Owner']['id'])); ?>
-		</td>
-		<?php } else {
-			echo $upload['Owner']['name'];
-		} ?>
+			<?php 
+			if($isAdmin){
+				echo $this->Html->link($upload['Owner']['name'], array('controller' => 'users', 'action' => 'view', $upload['Owner']['id']));
+			} else {
+				echo $upload['Owner']['name'];
+			} ?>
+			</td>
 		<td><?php echo h(date('M j, Y', strtotime($upload['Upload']['modified']))); ?>&nbsp;</td>
 		<td class="actions">
 			<?php
