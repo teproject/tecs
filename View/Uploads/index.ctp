@@ -1,7 +1,7 @@
 <div class="uploads index">
 	<h2><?php echo __('Uploads');?></h2>
 	<?php
-		if($loggedIn){
+		if($isAdmin){
 			echo $this->Html->link(
 				'<span id="add-action">New File</span>', 
 				array('action' => 'add'), 
