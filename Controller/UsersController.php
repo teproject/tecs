@@ -15,14 +15,6 @@ class UsersController extends AppController {
 		if($this->action == 'login'
 			|| $this->action == 'logout'){
 				$isAuthorized = true;
-		} else if (parent::loggedIn() && parent::isAdmin()){
-			if ($this->action == 'add'
-				|| $this->action == 'edit'
-				|| $this->action == 'delete'
-				|| $this->action == 'activate'
-				|| $this->action == 'index'){
-					$isAuthorized = true;
-			}
 		} else {
 			$isAuthorized = parent::isAuthorized($user);
 		}
